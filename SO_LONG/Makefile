@@ -8,5 +8,7 @@ all:
 	$(CC) $(MLX_FLAGS) $(FILES) -o $(PRORM_NAME)
 fclean: clean
 clean:
-	rm -rf a.out
+	rm -rf $(PRORM_NAME)
+run:
+	./so_long map.ber
 re: fclean all
