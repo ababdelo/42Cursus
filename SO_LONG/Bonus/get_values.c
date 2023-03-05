@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:10:52 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 10:41:27 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/05 22:03:02 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,16 @@ void	get_map_size(t_data *data, int i)
 
 void	get_collectible_pos(t_data *data, int i, int j, int k)
 {
+	
 	data->collc_pos = malloc(sizeof(t_pos) * data->collect_cntr);
 	if (!data->collc_pos)
 		print_msg("failed allocating collec_info struct\n", 1);
-	while (++i < (data->collect_cntr + 1))
+	while (++i < data->collect_cntr)
 	{
-		data->collc_pos[i].x_pos = 0;
-		data->collc_pos[i].y_pos = 0;
+		data->collc_pos[i].x_bufferpos = 0;
+		data->collc_pos[i].y_bufferpos = 0;
+		data->collc_pos[i].x_winpos = 0;
+		data->collc_pos[i].y_winpos = 0;
 	}
 	i = -1;
 	k = -1;
@@ -46,8 +49,10 @@ void	get_collectible_pos(t_data *data, int i, int j, int k)
 			if (data->dup_buff[i][j] == 'C')
 			{
 				++k;
-				data->collc_pos[k].x_pos = i;
-				data->collc_pos[k].y_pos = j;
+				data->collc_pos[k].x_bufferpos = i;
+				data->collc_pos[k].y_bufferpos = j;
+				data->collc_pos[k].x_winpos = j * 50;
+				data->collc_pos[k].y_winpos = i * 50;
 			}
 		}
 	}
@@ -55,8 +60,10 @@ void	get_collectible_pos(t_data *data, int i, int j, int k)
 
 void	get_exit_pos(t_data *data, int i, int j)
 {
-	data->exit_pos.x_pos = 0;
-	data->exit_pos.y_pos = 0;
+	data->exit_pos.x_bufferpos = 0;
+	data->exit_pos.y_bufferpos = 0;
+	data->exit_pos.x_winpos = 0;
+	data->exit_pos.y_winpos = 0;
 	while (data->dup_buff[++i])
 	{
 		j = -1;
@@ -64,8 +71,10 @@ void	get_exit_pos(t_data *data, int i, int j)
 		{
 			if (data->dup_buff[i][j] == 'E')
 			{
-				data->exit_pos.x_pos = j;
-				data->exit_pos.y_pos = i;
+				data->exit_pos.x_bufferpos = i;
+				data->exit_pos.y_bufferpos = j;
+				data->exit_pos.x_winpos = j * 50;
+				data->exit_pos.y_winpos = i * 50;
 			}
 		}
 	}
@@ -88,7 +97,13 @@ int	get_key_pressed(int keycode, t_data *data)
 	if (data->eated_collec_cntr == data->collect_cntr)
 	{
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->filled_portal_,
-			(data->exit_pos.x_pos * 50) + 2, (data->exit_pos.y_pos * 50) + 2);
+			(data->exit_pos.x_winpos) + 2, (data->exit_pos.y_winpos) + 2);
 	}
 	return (0);
+}
+
+void	get_player_pos(t_data *data, int x_pos, int y_pos)
+{
+	data->plr_xpos = x_pos;
+	data->plr_ypos = y_pos;
 }

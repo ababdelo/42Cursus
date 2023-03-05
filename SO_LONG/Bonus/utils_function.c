@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:51:30 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 14:28:24 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/05 23:20:23 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,13 @@ void	print2win(t_data *data, int x, int y, int index)
 		}
 		else if (data->buff[index] == 'P')
 		{
+			get_player_pos(data, x, y);
 			mlx_put_image_to_window(data->mlx, data->mlx_win,
 				data->dirt_, x, y);
 			mlx_put_image_to_window(data->mlx, data->mlx_win,
 				data->right_face, x + 2, y + 2);
 			data->player_pos = index;
+			
 		}
 		if (data->buff[index] != '\n')
 			x += data->block_size;
