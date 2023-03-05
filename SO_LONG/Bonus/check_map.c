@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:55:39 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 14:26:14 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 00:14:46 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void	floodfill(int x_pos, int y_pos, t_data *data)
 		|| (y_pos > data->width || y_pos < 0))
 		return ;
 	if (data->dup_buff[x_pos][y_pos] == '1'
-		|| data->dup_buff[x_pos][y_pos] == 'x')
+		|| data->dup_buff[x_pos][y_pos] == 'X'
+		|| data->dup_buff[x_pos][y_pos] == '*')
 		return ;
-	data->dup_buff[x_pos][y_pos] = 'x';
+	data->dup_buff[x_pos][y_pos] = '*';
 	floodfill(x_pos + 1, y_pos, data);
 	floodfill(x_pos, y_pos + 1, data);
 	floodfill(x_pos - 1, y_pos, data);
@@ -50,7 +51,7 @@ void	check_map_path(t_data *data, int i, int j)
 		while (data->dup_buff[i][++j])
 		{
 			if (data->dup_buff[i][j] == 'C')
-				print_msg("Collectibles are not reachable for the player\n", 1);
+				print_msg("Collectibles are not all reachable for the player\n", 1);
 			else if (data->dup_buff[i][j] == 'E')
 				print_msg("Exit is not reachable for the player\n", 1);
 		}
@@ -103,15 +104,19 @@ void	check_map_construction(t_data *data, int k)
 			data->collect_cntr++;
 		else if (data->buff[k] == 'E')
 			data->exit_cntr++;
+		else if (data->buff[k] == 'X')
+			data->enemy_cntr++;
 		else if (data->buff[k] != '0' && data->buff[k] != '1'
 			&& data->buff[k] != '\n')
 			print_msg("map construction, found illegal character!\n", 1);
 	}
 	if (data->player_cntr != 1)
-		print_msg("map constructions, it should be one player!\n", 1);
+		print_msg("map constructions, it should contain one player!\n", 1);
+	else if (data->enemy_cntr == 0)
+		print_msg("map constructions, it should contain at least one enemy!\n", 1);
 	else if (data->exit_cntr != 1)
-		print_msg("map constructions, it should be one exit!\n", 1);
+		print_msg("map constructions, it should contain one exit!\n", 1);
 	else if (data->collect_cntr == 0)
-		print_msg("map constructions, it should be at least one collectible!\n",
+		print_msg("map constructions, it should contain at least one collectible!\n",
 			1);
 }

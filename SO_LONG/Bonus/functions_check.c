@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:09:27 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 22:08:07 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 00:26:36 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,6 @@ void	check_game_goal(t_data *data, int pos)
 	if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[pos] == 'E')
 		print_msg("You won!\n", 0);
+	else if (data->buff[pos] == 'X')
+		print_msg("Player was Slaned by ' ZOMBIE '!\n", 0);
 }

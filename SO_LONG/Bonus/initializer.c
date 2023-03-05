@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:07:20 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 20:45:54 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/05 23:37:55 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	initialize_data(t_data *data)
 	data->block_size = 50;
 	data->collect_cntr = 0;
 	data->player_cntr = 0;
+	data->enemy_cntr = 0;
 	data->exit_cntr = 0;
 	data->player_pos = 0;
 	data->player_virtual_pos[0] = 0;

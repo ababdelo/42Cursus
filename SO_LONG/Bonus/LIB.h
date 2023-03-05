@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:40:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 23:06:01 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/05 23:52:30 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_data
 	void	*dirt_;
 	void	*wall_;
 	void	*collect_;
+	void	*enemy_;
 	void	*empty_portal_;
 	void	*filled_portal_;
 	void	*centered_face;
@@ -66,6 +67,7 @@ typedef struct s_data
 	int		collect_cntr;
 	int		player_cntr;
 	int		exit_cntr;
+	int		enemy_cntr;
 
 	int		eated_collec_cntr;
 
@@ -109,7 +111,7 @@ void	duplicate_buff(t_data *data, int i, int j, int k);
 void	initialize_data(t_data *data);
 void	initilize_mlx(t_data *data);
 void	print_msg(char *err, int ret);
-void	check_player_collectibles_textures(t_data *data);
+void	check_player_enemy_collectibles_textures(t_data *data);
 void	check_blocks_textures(t_data *data);
 void	check_textures(t_data *data);
 void	print2win(t_data *data, int x,	int y, int index);

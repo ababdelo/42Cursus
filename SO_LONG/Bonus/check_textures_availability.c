@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 10:36:19 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 15:01:09 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/05 23:58:37 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	check_textures(t_data *data)
 {
 	check_blocks_textures(data);
-	check_player_collectibles_textures(data);
+	check_player_enemy_collectibles_textures(data);
 }
 
 void	check_blocks_textures(t_data *data)
@@ -42,7 +42,7 @@ void	check_blocks_textures(t_data *data)
 	return ;
 }
 
-void	check_player_collectibles_textures(t_data *data)
+void	check_player_enemy_collectibles_textures(t_data *data)
 {
 	int	width;
 	int	height;
@@ -59,5 +59,9 @@ void	check_player_collectibles_textures(t_data *data)
 			"./textures/Player/right_face.xpm", &width, &height);
 	if (!data->right_face)
 		print_msg("couldn't found right player texture !\n", 1);
+	data->enemy_ = mlx_xpm_file_to_image(data->mlx,
+			"./textures/Enemies/Zombie.xpm", &width, &height);
+	if (!data->enemy_)
+		print_msg("couldn't found enemy texture !\n", 1);
 	return ;
 }

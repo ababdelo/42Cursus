@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:51:30 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 23:20:23 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 00:02:46 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,13 @@ void	print2win(t_data *data, int x, int y, int index)
 		else if (data->buff[index] == '0')
 			mlx_put_image_to_window(data->mlx, data->mlx_win,
 				data->dirt_, x, y);
+		else if (data->buff[index] == 'X')
+		{
+			mlx_put_image_to_window(data->mlx, data->mlx_win,
+				data->dirt_, x, y);
+			mlx_put_image_to_window(data->mlx, data->mlx_win,
+				data->enemy_, x + 5, y + 5);
+		}
 		else if (data->buff[index] == 'C')
 		{
 			mlx_put_image_to_window(data->mlx, data->mlx_win,
