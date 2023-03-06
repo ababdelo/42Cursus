@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:40:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 23:52:30 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 10:28:04 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ char	*ft_strdup(char *s1);
 
 void	animate_player(t_data *data);
 void	animate_collectibles(t_data *data);
-void	put_str_2_win(t_data *data, int x, int y, char *str);
+void	put_str_2_win(t_data *data, int x, int y);
 void	get_player_pos(t_data *data, int x_pos, int y_pos);
 void	check_game_goal(t_data *data, int pos);
 void	put_playertexture(t_data *data, int x, int y);

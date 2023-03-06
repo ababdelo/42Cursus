@@ -6,15 +6,22 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 22:56:31 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 23:05:47 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 10:28:44 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIB.h"
 
-void	put_str_2_win(t_data *data, int x, int y, char *str)
+void	put_str_2_win(t_data *data, int x, int y)
 {
+	char	*str;
+
+	data->moves_cntr++;
+	str = ft_itoa(data->moves_cntr);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->wall_, 0, 0);
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->wall_, 50, 0);
 	mlx_string_put(data->mlx, data->mlx_win, x, y, 16777215, str);
+	free(str);
 }
 
 int	digit_count(int nbr)

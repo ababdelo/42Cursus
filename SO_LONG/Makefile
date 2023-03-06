@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/03 11:51:18 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/06 00:20:28 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/06 10:31:59 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ MAND_PRGM = so_long
 
 BON_PGRM = so_long_bonus
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
 
 CC = cc
 
@@ -53,7 +53,7 @@ re : fclean all bonus
 run_mand : clean 
 	@clear && ./$(MAND_PRGM) maps/map_1.ber
 
-run_bonus : 
+run_bonus : clean
 	@clear && ./$(BON_PGRM) maps/map_3.ber
 
 .PHONY: all bonus clean fclean re run_mand run_bonus
