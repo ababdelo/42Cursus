@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:40:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/06 10:28:04 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:49:54 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_pos
 {
 	int	x_winpos;
 	int	y_winpos;
-	
+
 	int	x_bufferpos;
 	int	y_bufferpos;
 }	t_pos;
@@ -89,13 +89,18 @@ int		exit_win(t_data *data);
 int		animate(t_data *data);
 int		digit_count(int nbr);
 
-char	*ft_itoa(int c);
+char	*ft_itoa(int nbr);
 char	*check_map_extention_and_get_buff(char *name, char *path);
 char	*ft_strdup(char *s1);
 
-void	animate_player(t_data *data);
-void	animate_collectibles(t_data *data);
-void	put_str_2_win(t_data *data, int x, int y);
+void	chk_p_c_e(t_data *data, int x, int y, int index);
+void	chk_0_1_x(t_data *data, int x, int y, int index);
+void	animate_player(t_data *data, int x, int y);
+void	animate_collectibles(t_data *data, int index);
+void	put_mouvement_2_win(t_data *data, int x, int y);
+void	put_msg_2_win(t_data *data, int x, int y, char *str);
+void	put_collect_up(t_data *data, int j, int index);
+void	put_collect_down(t_data *data, int j, int index);
 void	get_player_pos(t_data *data, int x_pos, int y_pos);
 void	check_game_goal(t_data *data, int pos);
 void	put_playertexture(t_data *data, int x, int y);
@@ -109,7 +114,9 @@ void	get_collectible_pos(t_data *data, int i, int j, int k);
 void	get_exit_pos(t_data *data, int i, int j);
 void	duplicate_buff(t_data *data, int i, int j, int k);
 void	initialize_data(t_data *data);
-void	initilize_mlx(t_data *data);
+void	initialize_collec(t_data *data, int i);
+void	initialize_mlx(t_data *data);
+void	initialize_enem(t_data *data, int i);
 void	print_msg(char *err, int ret);
 void	check_player_enemy_collectibles_textures(t_data *data);
 void	check_blocks_textures(t_data *data);

@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:40:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 10:51:49 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:02:35 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ int		exit_win(t_data *data);
 
 char	*check_map_extention_and_get_buff(char *name, char *path);
 
+void	chk_p_c_e(t_data *data, int x, int y, int index);
+void	chk_0_1(t_data *data, int x, int y, int index);
+void	print2win(t_data *data, int x, int y, int index);
 void	check_rules(t_data *data);
 void	check_map_path(t_data *data, int i, int y);
 void	floodfill(int x_pos, int y_pos, t_data *data);
@@ -102,4 +105,5 @@ void	move_forward(t_data *data);
 void	move_right(t_data *data);
 void	move_left(t_data *data);
 void	move_backward(t_data *data);
+
 #endif

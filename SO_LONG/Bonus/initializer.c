@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:07:20 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 23:37:55 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:49:49 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,27 @@ void	initialize_data(t_data *data)
 	data->plr_ypos = 0;
 }
 
-void	initilize_mlx(t_data *data)
+void	initialize_mlx(t_data *data)
 {
 	data->mlx = mlx_init();
 	if (!data->mlx)
 		print_msg("failed initializing !\n", 1);
 	data->mlx_win = mlx_new_window(data->mlx, data->width * data->block_size,
-			data->height * data->block_size, "Hello");
+			data->height * data->block_size, "Mine Craft");
 	if (!data->mlx_win)
 		print_msg("failed creating new window !\n", 1);
+}
+
+void	initialize_collec(t_data *data, int i)
+{
+	data->collc_pos = malloc(sizeof(t_pos) * data->collect_cntr);
+	if (!data->collc_pos)
+		print_msg("failed allocating collec_info struct\n", 1);
+	while (++i < data->collect_cntr)
+	{
+		data->collc_pos[i].x_bufferpos = 0;
+		data->collc_pos[i].y_bufferpos = 0;
+		data->collc_pos[i].x_winpos = 0;
+		data->collc_pos[i].y_winpos = 0;
+	}
 }

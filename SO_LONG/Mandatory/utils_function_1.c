@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_function.c                                   :+:      :+:    :+:   */
+/*   utils_function_1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:51:30 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 10:46:53 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 12:39:16 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,40 @@ void	duplicate_buff(t_data *data, int index, int x, int y)
 	data->dup_buff[x][y] = '\0';
 }
 
-int	ft_strlen(char *str, char c)
+void	chk_p_c_e(t_data *data, int x, int y, int index)
 {
-	int	index;
-
-	index = 0;
-	if (!str)
-		return (0);
-	while (str[index] != c && str[index])
-		index++;
-	return (index);
+	if (data->buff[index] == 'P')
+	{
+		data->player_pos = index;
+		mlx_put_image_to_window(data->mlx, data->mlx_win,
+			data->dirt_, x, y);
+		mlx_put_image_to_window(data->mlx, data->mlx_win,
+			data->player_, x + 2, y + 2);
+	}
+	else if (data->buff[index] == 'C')
+	{
+		mlx_put_image_to_window(data->mlx, data->mlx_win,
+			data->dirt_, x, y);
+		mlx_put_image_to_window(data->mlx, data->mlx_win,
+			data->collect_, x + 7, y + 7);
+	}
+	else if (data->buff[index] == 'E')
+	{
+		mlx_put_image_to_window(data->mlx, data->mlx_win,
+			data->dirt_, x, y);
+		mlx_put_image_to_window(data->mlx, data->mlx_win,
+			data->empty_portal_, x + 2, y + 2);
+	}
 }
 
-void	print_msg(char *err, int ret)
+void	chk_0_1(t_data *data, int x, int y, int index)
 {
-	write(2, err, ft_strlen(err, '\0'));
-	exit(ret);
+	if (data->buff[index] == '1')
+		mlx_put_image_to_window(data->mlx, data->mlx_win,
+			data->wall_, x, y);
+	else if (data->buff[index] == '0')
+		mlx_put_image_to_window(data->mlx, data->mlx_win,
+			data->dirt_, x, y);
 }
 
 void	print2win(t_data *data, int x, int y, int index)
@@ -66,42 +84,9 @@ void	print2win(t_data *data, int x, int y, int index)
 			y += data->block_size;
 			x = 0;
 		}
-		else if (data->buff[index] == '1')
-			mlx_put_image_to_window(data->mlx, data->mlx_win,
-				data->wall_, x, y);
-		else if (data->buff[index] == '0')
-			mlx_put_image_to_window(data->mlx, data->mlx_win,
-				data->dirt_, x, y);
-		else if (data->buff[index] == 'C')
-		{
-			mlx_put_image_to_window(data->mlx, data->mlx_win,
-				data->dirt_, x, y);
-			mlx_put_image_to_window(data->mlx, data->mlx_win,
-				data->collect_, x + 7, y + 7);
-		}
-		else if (data->buff[index] == 'E')
-		{
-			mlx_put_image_to_window(data->mlx, data->mlx_win,
-				data->dirt_, x, y);
-			mlx_put_image_to_window(data->mlx, data->mlx_win,
-				data->empty_portal_, x + 2, y + 2);
-		}
-		else if (data->buff[index] == 'P')
-		{
-			mlx_put_image_to_window(data->mlx, data->mlx_win,
-				data->dirt_, x, y);
-			mlx_put_image_to_window(data->mlx, data->mlx_win,
-				data->player_, x + 2, y + 2);
-			data->player_pos = index;
-		}
+		chk_0_1(data, x, y, index);
+		chk_p_c_e(data, x, y, index);
 		if (data->buff[index] != '\n')
 			x += data->block_size;
 	}
-}
-
-int	exit_win(t_data *data)
-{
-	mlx_destroy_window(data->mlx, data->mlx_win);
-	print_msg("exit successfully !\n", 0);
-	return (0);
 }

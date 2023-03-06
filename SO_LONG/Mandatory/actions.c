@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:11:51 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 10:56:42 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:56:59 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	move_forward(t_data *data)
 	}
 	else if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[data->player_pos - data->width - 1] == 'E')
-		print_msg("You won!\n", 0);
+		print_msg("STEVE reached the END WORLD. You WON !!!\n", 0);
 }
 
 void	move_right(t_data *data)
@@ -67,7 +67,7 @@ void	move_right(t_data *data)
 	}
 	else if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[data->player_pos + 1] == 'E')
-		print_msg("You won!\n", 0);
+		print_msg("STEVE reached the END WORLD. You WON !!!\n", 0);
 }
 
 void	move_left(t_data *data)
@@ -96,7 +96,7 @@ void	move_left(t_data *data)
 	}
 	else if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[data->player_pos - 1] == 'E')
-		print_msg("You won!\n", 0);
+		print_msg("STEVE reached the END WORLD. You WON !!!\n", 0);
 }
 
 void	move_backward(t_data *data)
@@ -125,5 +125,5 @@ void	move_backward(t_data *data)
 	}
 	else if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[data->player_pos + data->width + 1] == 'E')
-		print_msg("You won!\n", 0);
+		print_msg("STEVE reached the END WORLD. You WON !!!\n", 0);
 }

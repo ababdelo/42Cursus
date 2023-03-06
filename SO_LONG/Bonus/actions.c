@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:11:51 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/06 10:51:36 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:40:00 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	move_forward(t_data *data)
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->right_face,
 			old_x_pos + 2, new_y_pos + 2);
 		data->player_pos = data->player_pos - data->width - 1;
-		put_str_2_win(data, 10, 10);
+		put_mouvement_2_win(data, 10, 10);
 	}
 }
 
@@ -62,7 +62,7 @@ void	move_right(t_data *data)
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->right_face,
 			new_x_pos + 2, old_y_pos + 2);
 		data->player_pos = data->player_pos + 1;
-		put_str_2_win(data, 10, 10);
+		put_mouvement_2_win(data, 10, 10);
 	}
 }
 
@@ -89,7 +89,7 @@ void	move_left(t_data *data)
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->right_face,
 			new_x_pos + 2, old_y_pos + 2);
 		data->player_pos = data->player_pos - 1;
-		put_str_2_win(data, 10, 10);
+		put_mouvement_2_win(data, 10, 10);
 	}
 }
 
@@ -116,6 +116,6 @@ void	move_backward(t_data *data)
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->right_face,
 			old_x_pos + 2, new_y_pos + 2);
 		data->player_pos = data->player_pos + data->width + 1;
-		put_str_2_win(data, 10, 10);
+		put_mouvement_2_win(data, 10, 10);
 	}
 }

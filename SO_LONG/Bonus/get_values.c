@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:10:52 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 22:03:02 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/06 22:53:31 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,15 @@ void	get_map_size(t_data *data, int i)
 		print_msg("program window is too large than ' 2560 X 1440 '!\n", 1);
 }
 
+void	get_player_pos(t_data *data, int x_pos, int y_pos)
+{
+	data->plr_xpos = x_pos;
+	data->plr_ypos = y_pos;
+}
+
 void	get_collectible_pos(t_data *data, int i, int j, int k)
 {
-	
-	data->collc_pos = malloc(sizeof(t_pos) * data->collect_cntr);
-	if (!data->collc_pos)
-		print_msg("failed allocating collec_info struct\n", 1);
-	while (++i < data->collect_cntr)
-	{
-		data->collc_pos[i].x_bufferpos = 0;
-		data->collc_pos[i].y_bufferpos = 0;
-		data->collc_pos[i].x_winpos = 0;
-		data->collc_pos[i].y_winpos = 0;
-	}
-	i = -1;
-	k = -1;
+	initialize_collec(data, i);
 	while (data->dup_buff[++i])
 	{
 		j = -1;
@@ -100,10 +94,4 @@ int	get_key_pressed(int keycode, t_data *data)
 			(data->exit_pos.x_winpos) + 2, (data->exit_pos.y_winpos) + 2);
 	}
 	return (0);
-}
-
-void	get_player_pos(t_data *data, int x_pos, int y_pos)
-{
-	data->plr_xpos = x_pos;
-	data->plr_ypos = y_pos;
 }
