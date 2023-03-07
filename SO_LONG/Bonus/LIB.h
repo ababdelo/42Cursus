@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:40:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/07 13:14:14 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:17:27 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,11 @@ int		exit_win(t_data *data);
 
 void	duplicate_buff(t_data *data, int i, int j, int k);
 
-void	floodfill(int x_pos, int y_pos, t_data *data);
-void	flood_test(t_data *data);
+void	fst_floodfill(int x_pos, int y_pos, t_data *data);
+void	scnd_floodfill(int x_pos, int y_pos, t_data *data);
+void	check_collectibles_reachability(t_data *data, int i);
+void	check_exit_reachability(t_data *data, int i);
+// void	flood_test(t_data *data);
 
 char	*ft_itoa(int nbr);
 char	*ft_strdup(char *s1);
