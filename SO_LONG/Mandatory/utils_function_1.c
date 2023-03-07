@@ -6,11 +6,18 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:51:30 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/06 12:39:16 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:23:54 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIB.h"
+
+int	exit_win(t_data *data)
+{
+	mlx_destroy_window(data->mlx, data->mlx_win);
+	print_msg("exit successfully !\n", 0);
+	return (0);
+}
 
 void	duplicate_buff(t_data *data, int index, int x, int y)
 {
@@ -65,16 +72,6 @@ void	chk_p_c_e(t_data *data, int x, int y, int index)
 	}
 }
 
-void	chk_0_1(t_data *data, int x, int y, int index)
-{
-	if (data->buff[index] == '1')
-		mlx_put_image_to_window(data->mlx, data->mlx_win,
-			data->wall_, x, y);
-	else if (data->buff[index] == '0')
-		mlx_put_image_to_window(data->mlx, data->mlx_win,
-			data->dirt_, x, y);
-}
-
 void	print2win(t_data *data, int x, int y, int index)
 {
 	while (data->buff[++index])
@@ -84,9 +81,27 @@ void	print2win(t_data *data, int x, int y, int index)
 			y += data->block_size;
 			x = 0;
 		}
-		chk_0_1(data, x, y, index);
+		if (data->buff[index] == '1')
+			mlx_put_image_to_window(data->mlx, data->mlx_win,
+				data->wall_, x, y);
+		else if (data->buff[index] == '0')
+			mlx_put_image_to_window(data->mlx, data->mlx_win,
+				data->dirt_, x, y);
 		chk_p_c_e(data, x, y, index);
 		if (data->buff[index] != '\n')
 			x += data->block_size;
 	}
+}
+
+void	print_mvm_2_shell(t_data *data)
+{
+	char	*str;
+	int		len;
+
+	str = ft_itoa(data->moves_cntr);
+	len = ft_strlen(str, '\0');
+	write(1, "Moves : ", 8);
+	write(1, str, len);
+	write(1, "\n", 1);
+	free(str);
 }

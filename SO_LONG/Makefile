@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/03 11:51:18 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/06 23:00:40 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/07 13:22:08 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ MAND_PRGM = so_long
 
 BON_PGRM = so_long_bonus
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
 
 CC = cc
 
@@ -26,7 +26,7 @@ MAND_SRCS = Mandatory/main.c Mandatory/initializer.c Mandatory/functions_check.c
 
 BON_SRCS = Bonus/main.c Bonus/initializer.c Bonus/functions_check.c Bonus/utils_function_1.c \
 			Bonus/utils_function_2.c Bonus/check_textures_availability.c Bonus/get_values.c \
-			Bonus/ft_animate.c Bonus/check_map.c Bonus/actions.c Bonus/print_2_win.c
+			Bonus/animate.c Bonus/ft_animate.c Bonus/check_map.c Bonus/actions.c Bonus/get_key.c Bonus/print_2_win.c
 
 MAND_OBJS = $(MAND_SRCS:.c=.o)
 
@@ -43,10 +43,10 @@ $(BON_PGRM) : $(BON_OBJS)
 	$(CC) $(CFLAGS) $(BON_OBJS) -lmlx -framework OpenGL -framework AppKit -o $(BON_PGRM)
 
 clean :
-	@$(RM) $(MAND_OBJS) $(BON_OBJS)
+	$(RM) $(MAND_OBJS) $(BON_OBJS)
 
 fclean : clean
-	@$(RM) $(MAND_PRGM) $(BON_PGRM)
+	$(RM) $(MAND_PRGM) $(BON_PGRM)
 
 re : fclean all bonus
 

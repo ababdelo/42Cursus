@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:10:52 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/06 22:53:31 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:21:42 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,24 +74,22 @@ void	get_exit_pos(t_data *data, int i, int j)
 	}
 }
 
-int	get_key_pressed(int keycode, t_data *data)
+void	get_enemy_pos(t_data *data, int i, int j, int k)
 {
-	if (keycode == EXIT)
-		exit_win(data);
-	else if (keycode == UP || keycode == AR_UP)
-		move_forward(data);
-	else if (keycode == DOWN || keycode == AR_DOWN)
-		move_backward(data);
-	else if (keycode == RIGHT || keycode == AR_RIGHT)
-		move_right(data);
-	else if (keycode == LEFT || keycode == AR_LEFT)
-		move_left(data);
-	else if (keycode == 17)
-		exit(0);
-	if (data->eated_collec_cntr == data->collect_cntr)
+	initialize_enemy(data, i);
+	while (data->dup_buff[++i])
 	{
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->filled_portal_,
-			(data->exit_pos.x_winpos) + 2, (data->exit_pos.y_winpos) + 2);
+		j = -1;
+		while (data->dup_buff[i][++j])
+		{
+			if (data->dup_buff[i][j] == 'X')
+			{
+				++k;
+				data->enemy_pos[k].x_bufferpos = i;
+				data->enemy_pos[k].y_bufferpos = j;
+				data->enemy_pos[k].x_winpos = j * 50;
+				data->enemy_pos[k].y_winpos = i * 50;
+			}
+		}
 	}
-	return (0);
 }

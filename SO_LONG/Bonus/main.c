@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:51:34 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/06 23:08:59 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:39:56 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char **argv)
 		duplicate_buff(&data, 0, 0, 0);
 		get_exit_pos(&data, -1, -1);
 		get_collectible_pos(&data, -1, -1, -1);
+		get_enemy_pos(&data, -1, -1, -1);
 		check_map_path(&data, -1, -1);
 		initialize_mlx(&data);
 		check_textures(&data);

@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:07:20 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/06 22:49:49 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:11:50 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,19 @@ void	initialize_collec(t_data *data, int i)
 		data->collc_pos[i].y_bufferpos = 0;
 		data->collc_pos[i].x_winpos = 0;
 		data->collc_pos[i].y_winpos = 0;
+	}
+}
+
+void	initialize_enemy(t_data *data, int i)
+{
+	data->enemy_pos = malloc(sizeof(t_pos) * data->enemy_cntr);
+	if (!data->enemy_pos)
+		print_msg("failed allocating collec_info struct\n", 1);
+	while (++i < data->enemy_cntr)
+	{
+		data->enemy_pos[i].x_bufferpos = 0;
+		data->enemy_pos[i].y_bufferpos = 0;
+		data->enemy_pos[i].x_winpos = 0;
+		data->enemy_pos[i].y_winpos = 0;
 	}
 }

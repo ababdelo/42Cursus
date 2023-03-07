@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:11:51 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/06 11:56:59 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:27:15 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	move_forward(t_data *data)
 			old_x_pos + 2, new_y_pos + 2);
 		data->player_pos = data->player_pos - data->width - 1;
 		data->moves_cntr++;
-		printf("Moves : %d\n", data->moves_cntr);
+		print_mvm_2_shell(data);
 	}
 	else if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[data->player_pos - data->width - 1] == 'E')
@@ -63,7 +63,7 @@ void	move_right(t_data *data)
 			new_x_pos + 2, old_y_pos + 2);
 		data->player_pos = data->player_pos + 1;
 		data->moves_cntr++;
-		printf("Moves : %d\n", data->moves_cntr);
+		print_mvm_2_shell(data);
 	}
 	else if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[data->player_pos + 1] == 'E')
@@ -92,7 +92,7 @@ void	move_left(t_data *data)
 			new_x_pos + 2, old_y_pos + 2);
 		data->player_pos = data->player_pos - 1;
 		data->moves_cntr++;
-		printf("Moves : %d\n", data->moves_cntr);
+		print_mvm_2_shell(data);
 	}
 	else if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[data->player_pos - 1] == 'E')
@@ -121,7 +121,7 @@ void	move_backward(t_data *data)
 			old_x_pos + 2, new_y_pos + 2);
 		data->player_pos = data->player_pos + data->width + 1;
 		data->moves_cntr++;
-		printf("Moves : %d\n", data->moves_cntr);
+		print_mvm_2_shell(data);
 	}
 	else if (data->eated_collec_cntr == data->collect_cntr
 		&& data->buff[data->player_pos + data->width + 1] == 'E')
