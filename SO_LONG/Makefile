@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/03 11:51:18 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/07 13:22:08 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/07 14:59:51 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ fclean : clean
 
 re : fclean all bonus
 
-run_mand : clean 
+run_mand : clean
 	@clear && ./$(MAND_PRGM) maps/map_1.ber
 
 run_bonus : clean

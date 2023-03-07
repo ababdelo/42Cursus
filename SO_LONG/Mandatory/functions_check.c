@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:09:27 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/05 10:37:05 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:56:27 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*check_map_extention_and_get_buff(char *name, char *path)
 	ret = read(id, buff, MAX_BUFFER_SIZE);
 	if (ret == -1)
 		print_msg("failing read file!\n", 1);
+	else if (ret == 0)
+		print_msg("empty file!\n", 1);
 	buff[ret] = '\0';
 	close(id);
 	return (buff);
