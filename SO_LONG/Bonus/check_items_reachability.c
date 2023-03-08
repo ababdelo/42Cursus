@@ -6,44 +6,37 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 20:14:59 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/07 20:17:57 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 10:47:16 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "LIB.h"
 
-void	fst_floodfill(int x_pos, int y_pos, t_data *data)
+void	floodfill(int x_pos, int y_pos, t_data *data, char c)
 {
 	if ((x_pos > data->height || x_pos < 0)
 		|| (y_pos > data->width || y_pos < 0))
 		return ;
-	if (data->dup_buff[x_pos][y_pos] != 'P'
-		&& data->dup_buff[x_pos][y_pos] != 'C'
-		&& data->dup_buff[x_pos][y_pos] != '0')
-		return ;
-	data->dup_buff[x_pos][y_pos] = '+';
-	fst_floodfill(x_pos + 1, y_pos, data);
-	fst_floodfill(x_pos, y_pos + 1, data);
-	fst_floodfill(x_pos - 1, y_pos, data);
-	fst_floodfill(x_pos, y_pos - 1, data);
-	return ;
-}
-
-void	scnd_floodfill(int x_pos, int y_pos, t_data *data)
-{
-	if ((x_pos > data->height || x_pos < 0)
-		|| (y_pos > data->width || y_pos < 0))
-		return ;
-	if (data->dup_buff[x_pos][y_pos] != '+'
-		&& data->dup_buff[x_pos][y_pos] != 'E'
-		&& data->dup_buff[x_pos][y_pos] != '0')
-		return ;
-	data->dup_buff[x_pos][y_pos] = '-';
-	scnd_floodfill(x_pos + 1, y_pos, data);
-	scnd_floodfill(x_pos, y_pos + 1, data);
-	scnd_floodfill(x_pos - 1, y_pos, data);
-	scnd_floodfill(x_pos, y_pos - 1, data);
-	return ;
+	if (c == 'C')
+	{
+		if (data->dup_buff[x_pos][y_pos] != 'P'
+			&& data->dup_buff[x_pos][y_pos] != 'C'
+			&& data->dup_buff[x_pos][y_pos] != '0')
+			return ;
+		data->dup_buff[x_pos][y_pos] = '+';
+	}
+	if (c == 'E')
+	{
+		if (data->dup_buff[x_pos][y_pos] != '+'
+			&& data->dup_buff[x_pos][y_pos] != 'E'
+			&& data->dup_buff[x_pos][y_pos] != '0')
+			return ;
+		data->dup_buff[x_pos][y_pos] = '-';
+	}
+	floodfill(x_pos + 1, y_pos, data, c);
+	floodfill(x_pos, y_pos + 1, data, c);
+	floodfill(x_pos - 1, y_pos, data, c);
+	floodfill(x_pos, y_pos - 1, data, c);
 }
 
 void	check_map_path(t_data *data, int i, int j)
@@ -68,8 +61,8 @@ void	check_collectibles_reachability(t_data *data, int i)
 {
 	int	j;
 
-	fst_floodfill(data->player_virtual_pos[0],
-		data->player_virtual_pos[1], data);
+	floodfill(data->player_virtual_pos[0],
+		data->player_virtual_pos[1], data, 'C');
 	while (data->dup_buff[++i])
 	{
 		j = -1;
@@ -85,8 +78,8 @@ void	check_exit_reachability(t_data *data, int i)
 {
 	int	j;
 
-	scnd_floodfill(data->player_virtual_pos[0],
-		data->player_virtual_pos[1], data);
+	floodfill(data->player_virtual_pos[0],
+		data->player_virtual_pos[1], data, 'E');
 	while (data->dup_buff[++i])
 	{
 		j = -1;

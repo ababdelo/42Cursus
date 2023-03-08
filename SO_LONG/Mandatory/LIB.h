@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:40:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/07 19:52:36 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 10:34:48 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,7 @@ void	chk_p_c_e(t_data *data, int x, int y, int index);
 void	print2win(t_data *data, int x, int y, int index);
 void	check_rules(t_data *data);
 void	check_map_path(t_data *data, int i, int y);
-void	fst_floodfill(int x_pos, int y_pos, t_data *data);
-void	scnd_floodfill(int x_pos, int y_pos, t_data *data);
+void	floodfill(int x_pos, int y_pos, t_data *data, char c);
 void	ft_check(t_data *data, int i, int j);
 void	ft_check(t_data *data, int i, int j);
 void	flood_test(t_data *data);
