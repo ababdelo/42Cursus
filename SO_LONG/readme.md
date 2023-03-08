@@ -1,9 +1,10 @@
-# so_long | 1337 Morocco
-
-*And thanks for all the fish! 🐟*
-
-<div align="center">
-  <img src=https://github.com/ababdelo/42Cursus/SO_LONG/Preview/Bonus/bonus_preview.png/>
+<h3 align="center" href="https://git.io/typing-svg"><img align="center" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&pause=1000&color=2683AC&vCenter=true&width=435&lines=so_long+" alt="Typing SVG"/> </h3> <h3 align="center" href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&pause=1000&color=495455&vCenter=true&width=435&lines=And+all+thanks+for+the+fish!" alt="Typing SVG"/>
+ 
+ <img width="75" height="75" src="https://animated-gif-creator.com/images/01/cartoon-fish-animated-gif-unique-fish-photo_78.gif"/>
+ </h3>
+ <br>
+ <div align="center">
+ <img src=https://github.com/ababdelo/42Cursus/blob/master/SO_LONG/Preview/Bonus/bonus_preview.png/>
 </div>
 
 ### Table of Contents
