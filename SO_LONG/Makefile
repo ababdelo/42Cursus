@@ -6,14 +6,16 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/03 11:51:18 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/08 15:14:53 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/08 15:23:11 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Color
-RED = \033[0;31m
-GREEN = \033[0;32m
-YELLOW = \033[0;33m
+RED = \033[1;31m
+GREEN = \033[1;32m
+YELLOW = \033[1;33m
+WHITE = \033[0;37m
+
 
 MAND_MSG = --> Mandatory part has been made successfully <--
 
@@ -27,7 +29,7 @@ CLN_MSG = ' .o ' files has been removed successfully
 
 FCLN_MSG = executables files has been removed successfully
 
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 CC = cc
 
@@ -49,21 +51,21 @@ BON_OBJS = $(BON_SRCS:.c=.o)
 all :  $(MAND_PRGM)
 
 $(MAND_PRGM) : $(MAND_OBJS)
-	@echo "${GREEN}$(MAND_MSG)${NC}"\
+	@echo "${GREEN}$(MAND_MSG)${WHITE}"\
 	&& $(CC) $(CFLAGS) $(MAND_OBJS) -lmlx -framework OpenGL -framework AppKit -o $(MAND_PRGM)
 
 bonus : $(BON_PGRM)
 
 $(BON_PGRM) : $(BON_OBJS)
-	@echo "${GREEN}$(BON_MSG)${NC}"\
+	@echo "${GREEN}$(BON_MSG)${WHITE}"\
 	&& $(CC) $(CFLAGS) $(BON_OBJS) -lmlx -framework OpenGL -framework AppKit -o $(BON_PGRM)
 
 clean :
-	@echo "${YELLOW}$(CLN_MSG)${NC}"\
+	@echo "${YELLOW}$(CLN_MSG)${WHITE}"\
 	&& $(RM) $(MAND_OBJS) $(BON_OBJS)
 
 fclean : clean
-	@echo "${RED}$(FCLN_MSG)${NC}"\
+	@echo "${RED}$(FCLN_MSG)${WHITE}"\
 	&& $(RM) $(MAND_PRGM) $(BON_PGRM)
 
 re : fclean all bonus
