@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:10:52 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/07 13:21:42 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:54:09 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	get_map_size(t_data *data, int i)
 	if (data->buff[i] == '\0')
 		data->height += 1;
 	if (data->width * 50 > 2560 || data->height * 50 > 1440)
+	{
+		print_msg_2_shell("Error\n");
 		print_msg("program window is too large than ' 2560 X 1440 '!\n", 1);
+	}
 }
 
 void	get_player_pos(t_data *data, int x_pos, int y_pos)

@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/03 11:51:18 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/08 15:23:11 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/08 16:02:43 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,9 @@ CC = cc
 
 RM = rm -f
 
-MAND_SRCS = Mandatory/main.c Mandatory/initializer.c Mandatory/functions_check.c \
+MAND_SRCS = Mandatory/main.c Mandatory/initializer.c Mandatory/functions_check.c Mandatory/check_utils.c \
 			Mandatory/utils_function_1.c Mandatory/utils_function_2.c Mandatory/check_textures_availability.c \
-			Mandatory/get_values.c Mandatory/check_items_reachability.c Mandatory/actions.c
+			Mandatory/get_values.c Mandatory/check_items_reachability.c Mandatory/actions.c 
 
 BON_SRCS = Bonus/main.c Bonus/initializer.c Bonus/functions_check.c Bonus/utils_function_1.c \
 			Bonus/utils_function_2.c Bonus/check_textures_availability.c Bonus/get_values.c \

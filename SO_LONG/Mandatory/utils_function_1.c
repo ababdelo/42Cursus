@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:51:30 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/07 13:23:54 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:47:27 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	duplicate_buff(t_data *data, int index, int x, int y)
 {
 	data->dup_buff = malloc(sizeof (char *) * (data->height + 1));
 	if (!data->dup_buff)
-		print_msg("allocating dup_buff failed\n", 1);
+		print_msg("Error\nallocating dup_buff failed\n", 1);
 	data->dup_buff[data->height] = NULL;
 	while (index < data->height)
 	{
 		data->dup_buff[index] = malloc(sizeof(char) * data->width + 1);
 		if (!data->dup_buff[index])
-			print_msg("allocating dup_buff index failed\n", 1);
+			print_msg("Error\nallocating dup_buff index failed\n", 1);
 		index++;
 	}
 	index = -1;

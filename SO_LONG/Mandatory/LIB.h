@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:40:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/08 13:57:21 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:57:01 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void	check_player_collectibles_textures(t_data *data);
 void	check_blocks_textures(t_data *data);
 void	check_textures(t_data *data);
 void	print2win(t_data *data, int x,	int y, int index);
+void	print_msg_2_shell(char *str);
 void	get_map_size(t_data *data, int i);
 void	check_lines_map_length(t_data *data, int i, int cntr);
 void	check_map_border(t_data *data, int i);

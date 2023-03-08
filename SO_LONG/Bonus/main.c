@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:51:34 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/07 12:39:56 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:54:35 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ int	main(int argc, char **argv)
 		mlx_loop(data.mlx);
 	}
 	else
-		print_msg("should not be more or less than two parameters\n", 1);
+		print_msg("Error\n should not be more or less than two parameters\n", 1);
 }

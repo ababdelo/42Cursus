@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 20:14:59 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/08 10:47:16 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:50:16 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,10 @@ void	check_collectibles_reachability(t_data *data, int i)
 		while (data->dup_buff[i][++j])
 		{
 			if (data->dup_buff[i][j] == 'C')
+			{
+				print_msg_2_shell("Error\n");
 				print_msg("Collec_ are not all reachable for the player\n", 1);
+			}
 		}
 	}
 }
@@ -86,7 +89,7 @@ void	check_exit_reachability(t_data *data, int i)
 		while (data->dup_buff[i][++j])
 		{
 			if (data->dup_buff[i][j] == 'E')
-				print_msg("Exit is not reachable for the player\n", 1);
+				print_msg("Error\nExit is not reachable for the player\n", 1);
 		}
 	}
 }

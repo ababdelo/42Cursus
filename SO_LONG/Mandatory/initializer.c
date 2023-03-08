@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:07:20 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/06 15:31:15 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:46:51 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	initilize_mlx(t_data *data)
 {
 	data->mlx = mlx_init();
 	if (!data->mlx)
-		print_msg("failed initializing !\n", 1);
+		print_msg("Error\nfailed initializing !\n", 1);
 	data->mlx_win = mlx_new_window(data->mlx, data->width * data->block_size,
 			data->height * data->block_size, "Mine Craft");
 	if (!data->mlx_win)
-		print_msg("failed creating new window !\n", 1);
+		print_msg("Error\nfailed creating new window !\n", 1);
 }
