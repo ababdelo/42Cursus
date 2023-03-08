@@ -58,9 +58,9 @@ void	initialize_collec(t_data *data, int i)
 
 void	initialize_enemy(t_data *data, int i)
 {
-	data->enemy_pos = malloc(sizeof(t_pos) * data->enemy_cntr);
+	data->enemy_pos = malloc(sizeof(t_pos) * data->enemy_cntr + 1);
 	if (!data->enemy_pos)
-		print_msg("failed allocating collec_info struct\n", 1);
+		print_msg("failed allocating enemy_info struct\n", 1);
 	while (++i < data->enemy_cntr)
 	{
 		data->enemy_pos[i].x_bufferpos = 0;

@@ -96,6 +96,7 @@ void	check_map_path(t_data *data, int i, int y);
 void	check_game_goal(t_data *data, int pos);
 void	check_lines_map_length(t_data *data, int i, int cntr);
 void	check_map_border(t_data *data, int i);
+void	check_items_cnt(t_data *data);
 void	check_map_construction(t_data *data, int k);
 
 void	get_player_pos(t_data *data, int x_pos, int y_pos);
@@ -119,6 +120,7 @@ void	chk_0_1_x(t_data *data, int x, int y, int index);
 void	put_playertexture(t_data *data, int x, int y);
 void	put_mouvement_2_win(t_data *data, int x, int y);
 void	put_msg_2_win(t_data *data, int x, int y, char *str);
+void	print_msg_2_shell(char *str);
 void	print2win(t_data *data, int x,	int y, int index);
 void	print_msg(char *err, int ret);
 int		exit_win(t_data *data);

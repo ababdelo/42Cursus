@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:40:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/08 10:34:48 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:57:21 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void	check_rules(t_data *data);
 void	check_map_path(t_data *data, int i, int y);
 void	floodfill(int x_pos, int y_pos, t_data *data, char c);
 void	ft_check(t_data *data, int i, int j);
-void	ft_check(t_data *data, int i, int j);
 void	flood_test(t_data *data);
 void	get_collectible_pos(t_data *data, int i, int j, int k);
 void	get_exit_pos(t_data *data, int i, int j);
@@ -94,6 +93,7 @@ void	duplicate_buff(t_data *data, int i, int j, int k);
 void	initialize_data(t_data *data);
 void	initilize_mlx(t_data *data);
 void	print_msg(char *err, int ret);
+void	print_msg_2_shell(char *str);
 void	check_player_collectibles_textures(t_data *data);
 void	check_blocks_textures(t_data *data);
 void	check_textures(t_data *data);
@@ -102,6 +102,7 @@ void	get_map_size(t_data *data, int i);
 void	check_lines_map_length(t_data *data, int i, int cntr);
 void	check_map_border(t_data *data, int i);
 void	check_map_construction(t_data *data, int k);
+void	check_items_cnt(t_data *data);
 void	print_mvm_2_shell(t_data *data);
 char	*ft_itoa(int nbr);
 char	*ft_strdup(char *s1);

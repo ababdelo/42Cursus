@@ -76,7 +76,7 @@ void	get_exit_pos(t_data *data, int i, int j)
 
 void	get_enemy_pos(t_data *data, int i, int j, int k)
 {
-	initialize_enemy(data, i);
+	initialize_enemy(data, 0);
 	while (data->dup_buff[++i])
 	{
 		j = -1;

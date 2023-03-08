@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 17:55:39 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/07 20:15:17 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/08 13:56:25 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ void	check_map_construction(t_data *data, int k)
 			data->collect_cntr++;
 		else if (data->buff[k] == 'E')
 			data->exit_cntr++;
-		else if (data->buff[k] == 'X')
-			data->enemy_cntr++;
 		else if (data->buff[k] != '0' && data->buff[k] != '1'
 			&& data->buff[k] != '\n')
 		{
@@ -84,11 +82,6 @@ void	check_items_cnt(t_data *data)
 	{
 		print_msg_2_shell("map construction error, ");
 		print_msg("it should contain one player!\n", 1);
-	}
-	else if (data->enemy_cntr != 2)
-	{
-		print_msg_2_shell("map construction error, ");
-		print_msg("it shouldn't more or less than two enemies!\n", 1);
 	}
 	else if (data->exit_cntr != 1)
 	{
