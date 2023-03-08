@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/03 11:51:18 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/08 16:02:43 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/08 18:30:39 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ YELLOW = \033[1;33m
 WHITE = \033[0;37m
 
 
-MAND_MSG = --> Mandatory part has been made successfully <--
+MAND_MSG = --> Mandatory part has been compiled successfully <--
 
-BON_MSG = --> Bonus part has been made successfully <--
+BON_MSG = --> Bonus part has been compiled successfully <--
 
 MAND_PRGM = so_long
 
