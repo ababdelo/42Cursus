@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/03 11:51:18 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/08 18:30:39 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/09 12:50:43 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,19 +15,23 @@ RED = \033[1;31m
 GREEN = \033[1;32m
 YELLOW = \033[1;33m
 WHITE = \033[0;37m
-
-
-MAND_MSG = --> Mandatory part has been compiled successfully <--
-
-BON_MSG = --> Bonus part has been compiled successfully <--
+BLUE = \033[1;34m
 
 MAND_PRGM = so_long
 
 BON_PGRM = so_long_bonus
 
-CLN_MSG = ' .o ' files has been removed successfully
+MAND_MSG = \t\t-->> Mandatory part has been compiled successfully <<--
 
-FCLN_MSG = executables files has been removed successfully
+BON_MSG = \t\t-->> Bonus part has been compiled successfully <<--
+
+CLN_MSG = \t\t\t-->> ' .o ' files has been removed successfully <<--
+
+FCLN_MSG = \t-->> executables files '$(MAND_PRGM)' && '$(BON_PGRM)' has been removed successfully <<--
+
+RUN_B_MSG = \t\t\t       -->> running ' $(BON_PGRM) ' <<--
+
+RUN_M_MSG = \t\t\t\t   -->> running ' $(MAND_PRGM) ' <<--
 
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
@@ -71,9 +75,11 @@ fclean : clean
 re : fclean all bonus
 
 run_mand : clean
-	@clear && ./$(MAND_PRGM) maps/map_1.ber
+	@echo "${BLUE}$(RUN_M_MSG)${WHITE}"\
+	&& ./$(MAND_PRGM) maps/map_1.ber
 	
 run_bonus : clean
-	@clear && ./$(BON_PGRM) maps/map_3.ber
+	@echo "${BLUE}$(RUN_B_MSG)${WHITE}"\
+	&& ./$(BON_PGRM) maps/map_3.ber
 
 .PHONY: all bonus clean fclean re run_mand run_bonus
