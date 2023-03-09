@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/03 11:51:18 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/09 12:50:43 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/09 13:45:01 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ RUN_B_MSG = \t\t\t       -->> running ' $(BON_PGRM) ' <<--
 
 RUN_M_MSG = \t\t\t\t   -->> running ' $(MAND_PRGM) ' <<--
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
 
 CC = cc
 
