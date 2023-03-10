@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:57:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/10 00:13:10 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:41:43 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,13 @@ void	add_cmdname_2_path(t_data *data)
 	index = -1;
 	while (data->paths[++index] != NULL)
 	{
-		data->cmd[0].newpaths[index] = ft_strjoin(data->paths[index], data->cmd[0].cmd);
-		// printf("path cmd 0\t%s\n", data->cmd[0].newpaths[index]);
-		data->cmd[1].newpaths[index] = ft_strjoin(data->paths[index], data->cmd[1].cmd);
-		// printf("path cmd 1\t%s\n", data->cmd[1].newpaths[index]);
+		if (data->cmd[0].cmd[0] == '/')
+			data->cmd[0].newpaths[index] = data->cmd[0].cmd;
+		else
+			data->cmd[0].newpaths[index] = ft_strjoin(data->paths[index], data->cmd[0].cmd);
+		if (data->cmd[1].cmd[0] == '/')
+			data->cmd[1].newpaths[index] = data->cmd[0].cmd;
+		else
+			data->cmd[1].newpaths[index] = ft_strjoin(data->paths[index], data->cmd[1].cmd);
 	}
 }

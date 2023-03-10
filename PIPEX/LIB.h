@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:12:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/09 22:08:33 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/10 13:49:16 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_data
 	int		infile_;
 	int		outfile_;
 	int		cntr_;
+	
 }	t_data;
 
 int	wrd_cnt(char const *s, char del);
@@ -51,6 +52,8 @@ char	*ft_strnstr(const char *str, const char *to_f, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 
+void	forkproc(t_data *data);
+void	closefd(t_data *data);
 void	add_cmdname_2_path(t_data *data);
 void	get_env_path(t_data *data);
 void	fill_cmd_struct(t_data * data);
