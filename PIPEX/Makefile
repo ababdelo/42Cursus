@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 13:44:33 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/09 13:51:03 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/14 15:42:10 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ CC = cc
 
 RM = rm -f
 
-SRCS =
+SRCS = main.c ft_check.c get_values.c initializer.c libft_utils_1.c libft_utils_2.c pipex_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
