@@ -10,3 +10,6 @@
 [submodule "SO_LONG"]
 	path = SO_LONG
 	url = git@github.com:ababdelo/SO_LONG.git
+[submodule "PIPEX"]
+	path = PIPEX
+	url = git@github.com:ababdelo/PIPEX.git
