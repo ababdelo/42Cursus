@@ -4,3 +4,6 @@
 [submodule "FT_PRINTF"]
 	path = FT_PRINTF
 	url = git@github.com:ababdelo/FT_PRINTF.git
+[submodule "GET_NEXT_LINE"]
+	path = GET_NEXT_LINE
+	url = git@github.com:ababdelo/GET_NEXT_LINE.git
