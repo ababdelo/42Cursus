@@ -1,3 +1,6 @@
 [submodule "LIBFT"]
 	path = LIBFT
 	url = git@github.com:ababdelo/LIBFT.git
+[submodule "FT_PRINTF"]
+	path = FT_PRINTF
+	url = git@github.com:ababdelo/FT_PRINTF.git
