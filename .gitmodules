@@ -1,0 +1,3 @@
+[submodule "LIBFT"]
+	path = LIBFT
+	url = git@github.com:ababdelo/LIBFT.git
