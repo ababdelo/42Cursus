@@ -7,6 +7,3 @@
 [submodule "GET_NEXT_LINE"]
 	path = GET_NEXT_LINE
 	url = git@github.com:ababdelo/GET_NEXT_LINE.git
-[submodule "SO_LONG"]
-	path = SO_LONG
-	url = git@github.com:ababdelo/SO_LONG.git
