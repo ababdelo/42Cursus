@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:57:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/16 16:58:15 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:00:58 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	fill_cmd_struct(t_data * data)
 {
 	int	ret;
 	int	filesdes[2];
+	
+	get_env_path(data);
 	data->cmd[0].args = ft_split(data->argv[2], ' ');
 	data->cmd[1].args = ft_split(data->argv[3], ' ');
 	data->cmd[0].cmd = data->cmd[0].args[0];
