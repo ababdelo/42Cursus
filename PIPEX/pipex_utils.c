@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 13:42:33 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/16 20:36:05 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/16 21:05:55 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	forkproc(t_data *data)
 			dup2(data->cmd[index].infile,0);
 			dup2(data->cmd[index].outfile,1);
 			closefd(data);
+			fprintf(stderr, "process[%d]\n", index);
 			choose_action(data, index);
 			exit(0);
 		}
@@ -41,14 +42,15 @@ void	choose_action(t_data *data, int index)
 	int	cntr;
 	
 	cntr = -1;
-	if (data->argv[2][0] != '/')
-		while (++cntr < data->cntr_)
+	if (data->argv[index+2][0] != '/')
+	{
+		while (++cntr < data->cntr_)		
+		{
+			fprintf(stderr,"%s\n",data->cmd[index].newpaths[cntr]);
 			execve(data->cmd[index].newpaths[cntr], data->cmd[index].args,data->envir);
-	else
-		execve(data->cmd[index].cmd, data->cmd[index].args,data->envir);
-	if (data->argv[3][0] != '/')
-		while (++cntr < data->cntr_)
-			execve(data->cmd[index].newpaths[cntr], data->cmd[index].args,data->envir);
+			fprintf(stderr,"here\n");
+		}
+	}
 	else
 		execve(data->cmd[index].cmd, data->cmd[index].args,data->envir);
 }

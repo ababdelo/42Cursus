@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:57:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/16 18:00:58 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/16 20:39:46 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,3 +61,4 @@ void	add_cmdname_2_path(t_data *data)
 		data->cmd[1].newpaths[index] = ft_strjoin(data->paths[index], data->cmd[1].cmd);
 	}
 }
+
