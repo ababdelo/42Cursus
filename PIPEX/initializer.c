@@ -6,11 +6,11 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:43:09 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/16 15:19:19 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/18 21:21:21 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "LIB.h"
+#include "PIPEX.h"
 
 void	initialize(t_data *data, char **av, char **ev)
 {
