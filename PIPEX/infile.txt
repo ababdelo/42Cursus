@@ -1,12 +1,18 @@
-hello
-world
-hello1
-world
-hello2
-world
-hello3
-world
-hello4
-world
-hello5
-world 112 ojnijn lkmkpkpk kpkpk
+➜  PIPEX git:(master) ✗ ls -la
+total 152
+drwxr-xr-x  15 ababdelo  2019    510 Mar 18 11:12 .
+drwxr-xr-x  11 ababdelo  2019    374 Mar 18 10:49 ..
+-rw-r--r--   1 ababdelo  2019   2025 Mar 18 10:49 LIB.h
+-rw-r--r--   1 ababdelo  2019   1726 Mar 18 10:49 Makefile
+drwxr-xr-x   3 ababdelo  2019    102 Mar 18 10:49 Subject
+-rw-r--r--   1 ababdelo  2019   1221 Mar 18 10:49 ft_check.c
+-rw-r--r--   1 ababdelo  2019   2355 Mar 18 11:09 get_values.c
+-rw-r--r--   1 ababdelo  2019    103 Mar 18 10:49 infile.txt
+-rw-r--r--   1 ababdelo  2019   1398 Mar 18 10:49 initializer.c
+-rw-r--r--   1 ababdelo  2019   2364 Mar 18 10:49 libft_utils_1.c
+-rw-r--r--   1 ababdelo  2019   2422 Mar 18 10:49 libft_utils_2.c
+-rw-r--r--   1 ababdelo  2019   1423 Mar 18 11:12 main.c
+-rw-r--r--   1 ababdelo  2019      0 Mar 18 11:12 outfile.txt
+-rwxr-xr-x   1 ababdelo  2019  32884 Mar 18 11:12 pipex
+-rw-r--r--   1 ababdelo  2019   1793 Mar 18 11:51 pipex_utils.c
+➜  PIPEX git:(master) ✗ 
