@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 13:44:33 by ababdelo          #+#    #+#              #
-#    Updated: 2023/03/14 15:42:10 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/03/18 15:42:05 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ BLUE = \033[1;34m
 
 PRGM = pipex
 
-MAKE_MSG = \t\t-->> Mandatory part has been compiled successfully <<--
+MAKE_MSG = --->> Mandatory part has been compiled successfully
 
-CLN_MSG = \t\t\t   -->> ' .o ' files has been removed successfully <<--
+CLN_MSG = --->> ' .o ' files has been removed successfully
 
-FCLN_MSG = \t\t\t-->> executable file '$(MAND_PRGM)' has been removed successfully <<--
+FCLN_MSG = --->> executable file ' $(MAND_PRGM) ' has been removed successfully
 
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
