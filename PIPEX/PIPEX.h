@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   LIB.h                                              :+:      :+:    :+:   */
+/*   PIPEX.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:12:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/18 15:52:04 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/19 00:17:10 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_H
-# define LIB_H
+#ifndef PIPEX_H
+# define PIPEX_H
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
 
 typedef struct s_cmd
 {
@@ -29,19 +28,18 @@ typedef struct s_cmd
 
 typedef struct s_data
 {
-	t_cmd 	*cmd;
+	t_cmd	*cmd;
 	char	**argv;
 	char	**envir;
 	char	**paths;
 	int		infile_;
 	int		outfile_;
 	int		cntr_;
-	
 }	t_data;
 
-int	wrd_cnt(char const *s, char del);
-int	call_process1(t_data *data);
-int	call_process2(t_data *data);
+int		wrd_cnt(char const *s, char del);
+int		call_process1(t_data *data);
+int		call_process2(t_data *data);
 
 size_t	ft_strlen(char const *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -58,7 +56,7 @@ void	forkproc(t_data *data);
 void	closefd(t_data *data);
 void	add_cmdname_2_path(t_data *data);
 void	get_env_path(t_data *data);
-void	fill_cmd_struct(t_data * data);
+void	fill_cmd_struct(t_data *data);
 void	print_msg(char *err, int ret);
 void	initialize(t_data *data, char **av, char **ev);
 void	check_file_accessebility(t_data *data);

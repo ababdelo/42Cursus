@@ -6,18 +6,21 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:23:59 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/18 21:21:10 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/19 00:14:55 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PIPEX.h"
 
-int main (int argc,char **argv,char **env)
+int	main(int argc, char **argv, char **env)
 {
-	t_data data;
-	
-	if(argc != 5)
-		print_msg("[Error]\n it shouldn't be more or less than 5 parameters\n",1);
+	t_data	data;
+
+	if (argc != 5)
+	{
+		print_msg("[Error]\n it shouldn't be\
+			 more or less than 5 parameters\n", 1);
+	}
 	else
 	{	
 		initialize(&data, argv, env);
@@ -26,5 +29,5 @@ int main (int argc,char **argv,char **env)
 		add_cmdname_2_path(&data);
 		forkproc(&data);
 	}
-	return(0);
+	return (0);
 }
