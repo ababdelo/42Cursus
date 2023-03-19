@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 13:42:33 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/19 00:19:19 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:32:41 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	forkproc(t_data *data)
 			dup2(data->cmd[index].infile, 0);
 			dup2(data->cmd[index].outfile, 1);
 			closefd(data);
-			choose_action(data, index);
+			choose_action(data, index, -1);
 			exit(1);
 		}
 	}
@@ -36,12 +36,10 @@ void	forkproc(t_data *data)
 		waitpid(pid[index], NULL, 2);
 }
 
-void	choose_action(t_data *data, int index)
+void	choose_action(t_data *data, int index, int cntr)
 {
-	int	cntr;
 	int	ret;
 
-	cntr = -1;
 	if (data->argv[index + 2][0] != '/')
 	{
 		while (++cntr < data->cntr_)
@@ -56,7 +54,12 @@ void	choose_action(t_data *data, int index)
 				data->cmd[index].args, data->envir);
 	}
 	if (ret == -1)
-		print_msg("[Error]\n Failed execute the command \n", 1);
+	{
+		if (index == 0)
+			print_msg("[Error]\n Failed execute the first command \n", 1);
+		if (index == 1)
+			print_msg("[Error]\n Failed execute the second command \n", 1);
+	}
 }
 
 void	closefd(t_data *data)

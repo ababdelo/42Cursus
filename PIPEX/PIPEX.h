@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:12:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/19 00:17:10 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:32:30 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_strnstr(const char *str, const char *to_f, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 
-void	choose_action(t_data *data, int index);
+void	choose_action(t_data *data, int index, int cntr);
 void	forkproc(t_data *data);
 void	closefd(t_data *data);
 void	add_cmdname_2_path(t_data *data);
