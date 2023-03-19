@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:12:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/19 13:32:30 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:51:27 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ typedef struct s_data
 }	t_data;
 
 int		wrd_cnt(char const *s, char del);
-int		call_process1(t_data *data);
-int		call_process2(t_data *data);
 
 size_t	ft_strlen(char const *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);

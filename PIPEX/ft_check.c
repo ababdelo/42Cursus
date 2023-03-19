@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:42:29 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/19 00:10:40 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:28:46 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	check_file_accessebility(t_data *data)
 {
 	data->infile_ = open(data->argv[1], O_RDONLY);
 	if (data->infile_ == -1)
-		print_msg("Error openning infile\n", 1);
+		print_msg("Error openning infile\n", 0);
 	data->outfile_ = open(data->argv[4], O_CREAT | O_TRUNC | O_WRONLY, 0644);
 	if (data->outfile_ == -1)
 		print_msg("Error openning outfile\n", 1);
