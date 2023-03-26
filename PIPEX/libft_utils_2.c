@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:58:50 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/19 20:28:35 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/03/25 16:41:20 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_msg(char *err, int ret)
 {
 	write(2, err, ft_strlen(err));
 	if (ret == 1)
-		exit(1);
+		exit(ret);
 }
 
 char	*ft_strdup(const char *s1)
