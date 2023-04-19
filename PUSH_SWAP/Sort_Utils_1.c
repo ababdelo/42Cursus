@@ -18,7 +18,7 @@ void	sa(t_data *data)
 	tmp = data->stack_a->value;
 	data->stack_a->value = data->stack_a->next->value;
 	data->stack_a->next->value = tmp;
-	write(1, "sa\n", 3);
+	printf("sa\n");
 }
 
 void	sb(t_data *data)
@@ -29,7 +29,7 @@ void	sb(t_data *data)
 	tmp = data->stack_b->value;
 	data->stack_b->value = data->stack_b->next->value;
 	data->stack_b->next->value = tmp;
-	write(1, "sb\n", 3);
+	printf("sb\n");
 }
 
 void	ss(t_data *data)
@@ -44,7 +44,7 @@ void	ss(t_data *data)
 	tmp = data->stack_b->value;
 	data->stack_b->value = data->stack_b->next->value;
 	data->stack_b->next->value = tmp;
-	write(1, "ss\n", 3);
+	printf("ss\n");
 }
 
 void	p2a(t_data *data)
@@ -53,12 +53,14 @@ void	p2a(t_data *data)
 		return ;
 	lst_add_front(&data->stack_a, data->stack_b->value);
 	delete_lst(&data->stack_b, get_lst_targ(data->stack_b, 1));
-	write(1, "pa\n", 3);
+	printf("pa\n");
 }
 
 void	p2b(t_data *data)
 {
+	if (data->stack_a == NULL)
+		return ;
 	lst_add_front(&data->stack_b, data->stack_a->value);
 	delete_lst(&data->stack_a, get_lst_targ(data->stack_a, 1));
-	write(1, "pb\n", 3);
+	printf("pb\n");
 }

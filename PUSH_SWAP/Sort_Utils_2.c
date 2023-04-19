@@ -15,15 +15,59 @@
 void	ra(t_data *data)
 {
 	int tmp;
+	t_node *ptr;
+
+	ptr = data->stack_a;
 	tmp = data->stack_a->value;
+	while(ptr->next != NULL)
+	{
+		ptr->value = ptr->next->value;
+		ptr = ptr->next;
+	}
+	ptr->value = tmp;
+	printf("ra\n");
 }
 
 void	rb(t_data *data)
 {
+	int tmp;
+	t_node *ptr;
 	
+	ptr = data->stack_b;
+	if (data->stack_b == NULL || countlst(data->stack_b) == 1)
+	return ;
+	tmp = data->stack_b->value;
+	while(ptr->next != NULL)
+	{
+		ptr->value = ptr->next->value;
+		ptr = ptr->next;
+	}
+	ptr->value = tmp;
+	printf("rb\n");
 }
 
-void	rra(t_data *data)
+void	rr(t_data *data)
 {
+	int tmp;
+	t_node *ptr;
 	
+	ptr = data->stack_a;
+	tmp = data->stack_a->value;
+	while(ptr->next != NULL)
+	{
+		ptr->value = ptr->next->value;
+		ptr = ptr->next;
+	}
+	ptr->value = tmp;
+	ptr = data->stack_b;
+	if (data->stack_b == NULL || countlst(data->stack_b) == 1)
+	return ;
+	tmp = data->stack_b->value;
+	while(ptr->next != NULL)
+	{
+		ptr->value = ptr->next->value;
+		ptr = ptr->next;
+	}
+	ptr->value = tmp;
+	printf("rr\n");
 }

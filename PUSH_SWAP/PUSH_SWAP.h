@@ -58,5 +58,10 @@ void	sb(t_data *data);
 void	ss(t_data *data);
 void	p2b(t_data *data);
 void	p2a(t_data *data);
-
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+void	rra(t_data *data);
+void	rrb(t_data *data);
+void	rrr(t_data *data);
 #endif

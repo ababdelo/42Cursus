@@ -32,27 +32,41 @@ int	main(int argc, char **argv)
 		if (!check_args(&data))
 			print_msg("Error Found !Digit Char\n", 1);
 		fill_list(&data);
-		
-		printf("before sa\n");
-		print_list(data.stack_a);
-		sa(&data);
-		printf("after sa\n");
-		print_list(data.stack_a);
-		
-		printf("before pb\n");
-		print_list(data.stack_a);
-		p2b(&data);
-		printf("A after pb\n");
-		print_list(data.stack_a);
-		printf("B after pb\n");
-		print_list(data.stack_b);
-		
-		printf("before pa\n");
-		print_list(data.stack_a);
-		p2a(&data);
-		printf("A after pb\n");
-		print_list(data.stack_a);
-		printf("B after pb\n");
-		print_list(data.stack_b);
+		// 		printf("************************************\n");
+		// printf("before sa\n");
+		// print_list(data.stack_a);
+		// sa(&data);
+		// printf("after sa\n");
+		// print_list(data.stack_a);
+		// 		printf("************************************\n");		
+		// printf("before pb\n");
+		// print_list(data.stack_a);
+		// p2b(&data);
+		// printf("A after pb\n");
+		// print_list(data.stack_a);
+		// printf("B after pb\n");
+		// print_list(data.stack_b);
+		// 		printf("************************************\n");		
+		// printf("before pa\n");
+		// print_list(data.stack_a);
+		// p2a(&data);
+		// printf("A after pb\n");
+		// print_list(data.stack_a);
+		// printf("B after pb\n");
+		// print_list(data.stack_b);
+		// p2b(&data);
+		// p2b(&data);
+		// p2b(&data);
+		// 		printf("************************************\n");		
+		// printf("before rrb\n");
+		// printf("A after rrb\n");
+		// print_list(data.stack_a);
+		// printf("B after rrb\n");
+		// print_list(data.stack_b);
+		// rrr(&data);
+		// printf("A after rrb\n");
+		// print_list(data.stack_a);
+		// printf("B after rrb\n");
+		// print_list(data.stack_b);
 	}	
 }
