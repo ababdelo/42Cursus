@@ -14,7 +14,8 @@
 
 void	initialize_struct(t_data *data, char ** av)
 {
-	data->node = NULL;
+	data->stack_a = NULL;
+	data->stack_b = NULL;
 	data->av = av;
 }
 
@@ -28,62 +29,112 @@ int	check_args(t_data *data)
 {
 	int	i;
 	int	j;
-	int	ret;
 
 	i = 0;
-	ret = -1;
 
 	while (data->av[++i] != NULL)
 	{
 		j = -1;
-		printf("%s\n", data->av[i]);
-		if (data->av[i][0] == '-')
+		// printf("%s\n", data->av[i]);
+		if (data->av[i][0] == '-' || data->av[i][0] == '+')
 			j++;
 		while (data->av[i][++j] != '\0')
-		{	
-			if (data->av[i][j] >= '0' && data->av[i][j] <= '9')
-				ret = 1;
-			else
-				return(-1);
-		}
+			if (data->av[i][j] < '0' || data->av[i][j] > '9')
+				return(0);
 	}
-	return (ret);
+	return (1);
 }
 
-t_node *ft_getend(t_node *node)
+t_node *ft_getend(t_node *stack_a)
 {
-	t_node *head = node;
+	t_node *head = stack_a;
 
 	while(head->next != NULL)
 		head = head->next;
 	return(head);
 }
 
-void lst_add_back(t_node *node,int data)
+void	lst_add_front(t_node **lst, int data)
 {
-	t_node *node1 = malloc(sizeof(struct s_node) * 1);
-	t_node *ptr;
-	node1->data = data;
-	node1->next = NULL;
-	ptr = ft_getend(node);
-	ptr->next = node1;
-	// printf("node[%d] --> addr : %p | --> data : %d\n",index, ptr, node1->data);
+	t_node *lst1= malloc(sizeof(t_node));
+	lst1->value = data;
+	lst1->next = *lst;
+	*lst = lst1;
 }
 
-void	fill_struct(t_data *data)
+void	delete_lst(t_node **lst, t_node *target)
+{
+	t_node *ptr = *lst;
+	t_node *backup;
+	while (ptr != NULL && target != NULL)
+	{
+		if (ptr->next == target)
+		{
+			backup = ptr->next->next;
+			free(target);
+			ptr->next = backup;
+			break;
+		}
+		else if (ptr == target)
+		{
+			*lst = ptr->next;
+			free(target);
+			break;
+		}
+		ptr = ptr->next;
+	}
+}
+
+t_node *get_lst_targ(t_node *lst, int targ)
+{
+	t_node *head = lst;
+	int	cntr = countlst(lst);
+	int index = 0;
+	while(index < cntr && head != NULL)
+	{
+		index++;
+		if(index == targ)
+			break;
+		head = head->next;
+	}
+	return(head);
+}
+
+int countlst(t_node *lst)
+{
+	t_node *head = lst;
+	int count = 0;
+	while(head != NULL)
+	{
+		head = head->next;
+		count++;
+	}
+	return(count);
+}
+
+void lst_add_back(t_node *stack_a,int data)
+{
+	t_node *stack_a1 = malloc(sizeof(struct s_node) * 1);
+	t_node *ptr;
+	stack_a1->value = data;
+	stack_a1->next = NULL;
+	ptr = ft_getend(stack_a);
+	ptr->next = stack_a1;
+		// printf("stack_a[%p] | --> data : %d\n", ptr, stack_a1->data);
+}
+
+void	fill_list(t_data *data)
 {
 	int	index;
 	t_node	*head;
 	
-	if (check_args(data) == -1)
-		print_msg("Error Found !Digit Char\n", 1);
 	head = malloc(sizeof(t_node));
 	if (!head)
 		print_msg("Error Couldn't Allocate 4 head\n", 1);
-	data->node = head;
-	index = 0;
-	head->data = ft_atoi(data->av[index]);
+	data->stack_a = head;
+	index = 1;
+	head->value = ft_atoi(data->av[index]);
 	head->next = NULL;
 	while (data->av[++index] != NULL)
-		lst_add_back(data->node, ft_atoi(data->av[index]));
+		lst_add_back(data->stack_a, ft_atoi(data->av[index]));
 }

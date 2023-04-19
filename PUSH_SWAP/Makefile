@@ -25,13 +25,13 @@ CLN_MSG = --->> ' .o ' files has been removed successfully
 
 FCLN_MSG = --->> executable file ' $(PRGM) ' has been removed successfully
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
-CC = cc
+CC = gcc
 
 RM = rm -f
 
-SRCS = main.c PS_Utils.c Libft_Utils.c
+SRCS = Sort_Utils_1.c Push_Swap.c PS_Utils.c Libft_Utils.c
 
 OBJS = $(SRCS:.c=.o)
 

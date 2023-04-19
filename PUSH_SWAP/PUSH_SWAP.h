@@ -20,31 +20,43 @@
 
 typedef	struct s_node
 {
-	int	data;
+	int	value;
 	struct s_node *next;
 }t_node;
 
 typedef struct s_data
 {
-	t_node	*node;
+	t_node	*stack_a;
+	t_node	*stack_b;
 	char	**av;
 }	t_data;
 
 void	initialize_struct(t_data *data, char **av);
 void	print_msg(char *str, int ret);
-void	fill_struct(t_data *data);
-void	lst_add_back(t_node *node,int data);
+void	fill_list(t_data *data);
+void	lst_add_back(t_node *stack_a,int data);
 
-t_node *ft_getend(t_node *node);
+t_node *ft_getend(t_node *stack_a);
 
 int		ft_strlen(char *str);
 int		ft_atoi(char *str);
 int		check_args(t_data *data);
+
+void	delete_lst(t_node **lst, t_node *target);
+t_node *get_lst_targ(t_node *lst, int targ);
+void	lst_add_front(t_node **lst, int data);
+int countlst(t_node *lst);
 
 void	sort_2nbr(t_data *data);
 void	sort_3nbr(t_data *data);
 void	sort_5nbr(t_data *data);
 void	sort_l100nbr(t_data *data);
 void	sort_m100nbr(t_data *data);
+
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
+void	p2b(t_data *data);
+void	p2a(t_data *data);
 
 #endif
