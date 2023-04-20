@@ -12,61 +12,67 @@
 
 #include "PUSH_SWAP.h"
 
-void print_list(t_node *lst)
+void print_list(t_node *lst, char c)
 {
 	while ( lst != NULL)
 	{
-		printf("stack_a[%p] : %d\n",lst, lst->value);
+		printf("stack_%c[%p] : %d\n",c,lst, lst->value);
 		lst = lst->next;
 	}
 }
 
 int	main(int argc, char **argv)
 {
+	t_data	data;
 	if (argc < 3)
 		return (0);	
 	else
 	{
-		t_data	data;
 		initialize_struct(&data, argv);
 		if (!check_args(&data))
-			print_msg("Error Found !Digit Char\n", 1);
+			print_msg("Error ' NAN '\n");
 		fill_list(&data);
-		// 		printf("************************************\n");
-		// printf("before sa\n");
-		// print_list(data.stack_a);
-		// sa(&data);
-		// printf("after sa\n");
-		// print_list(data.stack_a);
-		// 		printf("************************************\n");		
-		// printf("before pb\n");
-		// print_list(data.stack_a);
-		// p2b(&data);
-		// printf("A after pb\n");
-		// print_list(data.stack_a);
-		// printf("B after pb\n");
-		// print_list(data.stack_b);
-		// 		printf("************************************\n");		
-		// printf("before pa\n");
-		// print_list(data.stack_a);
-		// p2a(&data);
-		// printf("A after pb\n");
-		// print_list(data.stack_a);
-		// printf("B after pb\n");
-		// print_list(data.stack_b);
-		// p2b(&data);
-		// p2b(&data);
-		// p2b(&data);
-		// 		printf("************************************\n");		
-		// printf("before rrb\n");
-		// printf("A after rrb\n");
-		// print_list(data.stack_a);
-		// printf("B after rrb\n");
-		// print_list(data.stack_b);
-		// rrr(&data);
-		// printf("A after rrb\n");
-		// print_list(data.stack_a);
-		// printf("B after rrb\n");
-		// print_list(data.stack_b);
-	}	
+		//ft_tester(&data);
+		if (argc == 3)
+			sort_2nbr(&data);
+		else if (argc == 4)
+			sort_3nbr(&data);
+		// else if (argc > 4 && argc <= 6)
+		// 	sort_5nbr(&data);
+		// else if (argc > 6 && argc <= 101)
+		// 	sort_l1hnbr(&data);
+		// else
+		// 	sort_m1hnbr(&data);
+		print_list(data.stack_a, 'a');
+	}
+}
+
+void ft_tester(t_data *data)
+{
+	sa(data);
+	pb(data);
+	pb(data);
+	ss(data);
+	pb(data);
+	rrb(data);
+	sa(data);
+	pb(data);
+	sb(data);
+	pb(data);
+	rb(data);
+	ra(data);
+	pb(data);
+	sa(data);
+	pa(data);
+	sa(data);
+	pa(data);
+	pa(data);
+	pa(data);
+	pa(data);
+	pa(data);
+	printf("STACK A :\n");
+	print_list(data->stack_a, 'a');
+	printf("STACK B :\n");
+	print_list(data->stack_b, 'b');
+	printf("************************************\n");
 }

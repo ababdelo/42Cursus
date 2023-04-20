@@ -31,7 +31,8 @@ CC = gcc
 
 RM = rm -f
 
-SRCS = Sort_Utils_1.c Push_Swap.c PS_Utils.c Libft_Utils.c Sort_Utils_2.c Sort_Utils_3.c
+SRCS = Sort_Utils_1.c Push_Swap.c PS_Utils.c Libft_Utils.c Sort_Utils_2.c Sort_Utils_3.c\
+	Lst_Utils_1.c Lst_Utils_2.c FT_Sort.c
 
 OBJS = $(SRCS:.c=.o)
 

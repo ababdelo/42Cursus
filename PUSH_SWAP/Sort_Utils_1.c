@@ -47,7 +47,7 @@ void	ss(t_data *data)
 	printf("ss\n");
 }
 
-void	p2a(t_data *data)
+void	pa(t_data *data)
 {
 	if (data->stack_b == NULL)
 		return ;
@@ -56,7 +56,7 @@ void	p2a(t_data *data)
 	printf("pa\n");
 }
 
-void	p2b(t_data *data)
+void	pb(t_data *data)
 {
 	if (data->stack_a == NULL)
 		return ;

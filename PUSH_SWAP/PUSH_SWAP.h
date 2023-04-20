@@ -31,12 +31,14 @@ typedef struct s_data
 	char	**av;
 }	t_data;
 
+void	ft_tester(t_data *data);
+
 void	initialize_struct(t_data *data, char **av);
-void	print_msg(char *str, int ret);
+void	print_msg(char *str);
 void	fill_list(t_data *data);
 void	lst_add_back(t_node *stack_a,int data);
-
-t_node *ft_getend(t_node *stack_a);
+void print_list(t_node *lst, char c);
+t_node *ft_getend(t_node *lst);
 
 int		ft_strlen(char *str);
 int		ft_atoi(char *str);
@@ -46,18 +48,19 @@ void	delete_lst(t_node **lst, t_node *target);
 t_node *get_lst_targ(t_node *lst, int targ);
 void	lst_add_front(t_node **lst, int data);
 int countlst(t_node *lst);
+int	check_repetition(t_data *data);
 
 void	sort_2nbr(t_data *data);
 void	sort_3nbr(t_data *data);
 void	sort_5nbr(t_data *data);
-void	sort_l100nbr(t_data *data);
-void	sort_m100nbr(t_data *data);
+void	sort_l1hnbr(t_data *data);
+void	sort_m1hnbr(t_data *data);
 
 void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
-void	p2b(t_data *data);
-void	p2a(t_data *data);
+void	pb(t_data *data);
+void	pa(t_data *data);
 void	ra(t_data *data);
 void	rb(t_data *data);
 void	rr(t_data *data);
