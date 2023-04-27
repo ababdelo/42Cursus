@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:21:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/20 11:21:58 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/04/27 13:13:17 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,4 @@ void lst_add_back(t_node *stack_a,int data)
 	stack_a1->next = NULL;
 	ptr = ft_getend(stack_a);
 	ptr->next = stack_a1;
-		// printf("stack_a[%p] | --> data : %d\n", ptr, stack_a1->data);
 }

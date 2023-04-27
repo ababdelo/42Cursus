@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/01 11:42:59 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/04/27 13:58:14 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_data
 	t_node	*stack_a;
 	t_node	*stack_b;
 	char	**av;
+	char	*err;
 }	t_data;
 
 void	ft_tester(t_data *data);
@@ -37,21 +38,25 @@ void	initialize_struct(t_data *data, char **av);
 void	print_msg(char *str);
 void	fill_list(t_data *data);
 void	lst_add_back(t_node *stack_a,int data);
-void print_list(t_node *lst, char c);
+void 	print_list(t_node *lst, char c);
+void	check_args(t_data *data);
+void	GetErrorRef(t_data *data);
+
 t_node *ft_getend(t_node *lst);
+t_node *get_lst_targ(t_node *lst, int targ);
 
 int		ft_strlen(char *str);
-int		ft_atoi(char *str);
-int		check_args(t_data *data);
+int		ft_atoi(t_data *data, char *str);
+int 	countlst(t_node *lst);
+int		check_repetition(t_data *data);
+int		ft_strcmp(char *str, char *ref);
 
 void	delete_lst(t_node **lst, t_node *target);
-t_node *get_lst_targ(t_node *lst, int targ);
 void	lst_add_front(t_node **lst, int data);
-int countlst(t_node *lst);
-int	check_repetition(t_data *data);
+
 
 void	sort_2nbr(t_data *data);
-void	sort_3nbr(t_data *data);
+void	sort_3nbr(t_data *data, t_node *head);
 void	sort_5nbr(t_data *data);
 void	sort_l1hnbr(t_data *data);
 void	sort_m1hnbr(t_data *data);

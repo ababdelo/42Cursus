@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:58:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/20 15:58:11 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:04:47 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,23 @@ void	sort_2nbr(t_data *data)
 		return ;
 }
 
-void	sort_3nbr(t_data *data)
+void	sort_3nbr(t_data *data, t_node *head)
 {
-	if (data->stack_a->value > data->stack_a->next->value &&
-		data->stack_a->value > data->stack_a->next->next->value)
+	if (head->value > head->next->value && head->value > head->next->next->value)
 	{
-		if (data->stack_a->next->value > data->stack_a->next->next->value)
+		if (head->next->value > head->next->next->value)
 		{
-			pb(data);
 			sa(data);
-			pa(data);
-			ra(data);
+			rra(data);
 		}
-		else if (data->stack_a->next->value < data->stack_a->next->next->value)
+		else if (head->next->value < head->next->next->value)
 			ra(data);
 	}
-	else if (data->stack_a->value < data->stack_a->next->value &&
-			data->stack_a->next->value > data->stack_a->next->next->value)
+	else if (head->value < head->next->value && head->next->value > head->next->next->value)
 	{
-		if (data->stack_a->value > data->stack_a->next->next->value)
+		if (head->value > head->next->next->value)
 			rra(data);
-		else if (data->stack_a->value < data->stack_a->next->next->value)
+		else if (head->value < head->next->next->value)
 		{
 			rra(data);
 			sa(data);
@@ -48,8 +44,7 @@ void	sort_3nbr(t_data *data)
 	}
 	else
 	{
-		if (data->stack_a->value < data->stack_a->next->value &&
-			data->stack_a->value < data->stack_a->next->next->value)
+		if (head->value < head->next->value && head->value < head->next->next->value)
 			return ;
 		else
 			sa(data);

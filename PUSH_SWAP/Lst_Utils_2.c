@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:28:14 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/20 11:28:14 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/04/27 13:14:35 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,4 @@ void	delete_lst(t_node **lst, t_node *target)
 		}
 		ptr = ptr->next;
 	}
-}
-
-int	check_repetition(t_data *data)
-{
-	t_node *head = data->stack_a;
-	t_node *head2;
-	int	cntr;
-	// printf("here\n");
-	while(head != NULL)
-	{
-		cntr = 0;
-		head2 = data->stack_a;
-		// printf("here1\n");
-		while(head2 != NULL)
-		{
-			// printf("here2\n");
-			if(head->value == head2->value)
-				cntr++;
-			head2 = head2->next;
-		}
-		if(cntr > 1)
-			return(1);
-		head = head->next;
-	}
-	return(0);
 }

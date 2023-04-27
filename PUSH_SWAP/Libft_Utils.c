@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 12:23:56 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/03/30 14:30:17 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/04/27 13:47:39 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,29 @@ int	ft_strlen(char *str)
 	return (index);
 }
 
-int	ft_atoi(char *str)
+int	ft_strcmp(char *str, char *ref)
+{
+	int	index = 0;
+	
+	index = 0;
+	while (str[index] != '\0' || ref[index] != '\0')
+	{
+		if (str[index] != ref[index])
+			return (str[index] - ref[index]);
+		index++;
+	}
+	return (0);
+}
+
+void	check_nbr_range(t_data *data, unsigned int nbr, int sgn)
+{
+	if (nbr > INT_MAX && sgn == 1)
+		data->err = "INT_MAX";
+	else if (nbr > 2147483648 && sgn == -1)
+		data->err = "INT_MIN";
+}
+
+int	ft_atoi(t_data *data, char *str)
 {
 	int				sgn;
 	unsigned int	result;
@@ -41,12 +63,9 @@ int	ft_atoi(char *str)
 	}
 	while (str[index] >= '0' && str[index] <= '9')
 	{
-		if (result > INT_MAX && sgn == 1)
-			return (-1);
-		else if (result > 2147483648 && sgn == -1)
-			return (-1);
 		result = result * 10 + (str[index] - 48);
 		index++;
 	}
+	check_nbr_range(data, result, sgn);
 	return (result * sgn);
 }
