@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:08:59 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/01 15:26:03 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:17:10 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	sa(t_data *data)
 {
 	int	tmp;
+
 	tmp = data->stack_a->value;
 	data->stack_a->value = data->stack_a->next->value;
 	data->stack_a->next->value = tmp;
@@ -24,6 +25,7 @@ void	sa(t_data *data)
 void	sb(t_data *data)
 {
 	int	tmp;
+
 	if (data->stack_b == NULL || countlst(data->stack_b) == 1)
 		return ;
 	tmp = data->stack_b->value;
@@ -35,10 +37,10 @@ void	sb(t_data *data)
 void	ss(t_data *data)
 {
 	int	tmp;
+
 	tmp = data->stack_a->value;
 	data->stack_a->value = data->stack_a->next->value;
 	data->stack_a->next->value = tmp;
-	
 	if (data->stack_b == NULL || countlst(data->stack_b) == 1)
 		return ;
 	tmp = data->stack_b->value;

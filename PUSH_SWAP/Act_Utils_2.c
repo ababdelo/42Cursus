@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:09:13 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/01 15:26:38 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:18:42 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ra(t_data *data)
 {
-	int tmp;
-	t_node *ptr;
+	int		tmp;
+	t_node	*ptr;
 
 	ptr = data->stack_a;
 	tmp = data->stack_a->value;
-	while(ptr->next != NULL)
+	while (ptr->next != NULL)
 	{
 		ptr->value = ptr->next->value;
 		ptr = ptr->next;
@@ -30,14 +30,14 @@ void	ra(t_data *data)
 
 void	rb(t_data *data)
 {
-	int tmp;
-	t_node *ptr;
-	
+	int		tmp;
+	t_node	*ptr;
+
 	ptr = data->stack_b;
 	if (data->stack_b == NULL || countlst(data->stack_b) == 1)
-	return ;
+		return ;
 	tmp = data->stack_b->value;
-	while(ptr->next != NULL)
+	while (ptr->next != NULL)
 	{
 		ptr->value = ptr->next->value;
 		ptr = ptr->next;
@@ -48,12 +48,12 @@ void	rb(t_data *data)
 
 void	rr(t_data *data)
 {
-	int tmp;
-	t_node *ptr;
-	
+	int		tmp;
+	t_node	*ptr;
+
 	ptr = data->stack_a;
 	tmp = data->stack_a->value;
-	while(ptr->next != NULL)
+	while (ptr->next != NULL)
 	{
 		ptr->value = ptr->next->value;
 		ptr = ptr->next;
@@ -61,9 +61,9 @@ void	rr(t_data *data)
 	ptr->value = tmp;
 	ptr = data->stack_b;
 	if (data->stack_b == NULL || countlst(data->stack_b) == 1)
-	return ;
+		return ;
 	tmp = data->stack_b->value;
-	while(ptr->next != NULL)
+	while (ptr->next != NULL)
 	{
 		ptr->value = ptr->next->value;
 		ptr = ptr->next;
