@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push_Swap.c                                        :+:      :+:    :+:   */
+/*   Sort_Utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 13:08:21 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/01 15:34:11 by ababdelo         ###   ########.fr       */
+/*   Created: 2023/05/01 15:27:35 by ababdelo          #+#    #+#             */
+/*   Updated: 2023/05/01 15:28:15 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PUSH_SWAP.h"
 
-int	main(int argc, char **argv)
+void	push_bgval(t_node *head, t_data *data)
 {
-	t_data	data;
-	int	ac;
 	int	cntr;
 
-	ac = 1;
-	if (argc < 3)
-		return (0);
-	else
+	cntr = countlst(head);
+	if (cntr == 1)
+		rra(data);
+	else if (cntr == 2)
 	{
-		cntr = countlst(data.stack_a);
-		initialize_prog(&data, argv, ac);
-		if (is_sorted(&data) == 1)
-			return (0);
-		else
-			which_oper(&data, argc, cntr);
-		print_list(data.stack_a, 'a');
+		rra(data);
+		rra(data);
 	}
+	if (countlst(data->stack_a) == 5)
+	{
+		if (cntr == 3)
+		{
+			ra(data);
+			ra(data);
+		}
+		else if (cntr == 4)
+			ra(data);
+	}
+	else if (countlst(data->stack_a) == 4)
+		if (cntr == 3)
+			ra(data);
+	pb(data);
 }

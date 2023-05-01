@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/01 12:53:33 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/01 15:29:00 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	lst_add_front(t_node **lst, int data);
 void	sort_2nbr(t_data *data);
 void	sort_3nbr(t_data *data, t_node *head);
 void	sort_5nbr(t_data *data);
-void	sort_more(t_data *data);
+void	sort_largenbr(t_data *data);
 int		is_sorted(t_data *data);
 
 void	initialize_prog(t_data *data, char **argv, int ac);

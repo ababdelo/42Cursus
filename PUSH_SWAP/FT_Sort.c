@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FT_Sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:58:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/29 08:40:53 by mabdelou         ###   ########.fr       */
+/*   Updated: 2023/05/01 15:27:48 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,35 +71,7 @@ void	sort_5nbr(t_data *data)
 	}
 }
 
-void	push_bgval(t_node *head, t_data *data)
-{
-	int	cntr;
-
-	cntr = countlst(head);
-	if (cntr == 1)
-		rra(data);
-	else if (cntr == 2)
-	{
-		rra(data);
-		rra(data);
-	}
-	if (countlst(data->stack_a) == 5)
-	{
-		if (cntr == 3)
-		{
-			ra(data);
-			ra(data);
-		}
-		else if (cntr == 4)
-			ra(data);
-	}
-	else if (countlst(data->stack_a) == 4)
-		if (cntr == 3)
-			ra(data);
-	pb(data);
-}
-
-void	sort_more(t_data *data)
+void	sort_largenbr(t_data *data)
 {
 	(void)*data;
 }

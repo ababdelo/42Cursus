@@ -1,16 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PS_Utils.c                                         :+:      :+:    :+:   */
+/*   PS_Utils_1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:31:17 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/01 11:48:35 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/01 15:33:42 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PUSH_SWAP.h"
+
+void print_list(t_node *lst, char c)
+{
+	while ( lst != NULL)
+	{
+		printf("stack_%c[%p] : %d\n",c,lst, lst->value);
+		lst = lst->next;
+	}
+}
+
+void	print_msg(char *str)
+{
+	write(2, str, ft_strlen(str));
+	exit(1);
+}
 
 void	initialize_struct(t_data *data, char ** av)
 {
@@ -18,12 +33,6 @@ void	initialize_struct(t_data *data, char ** av)
 	data->stack_b = NULL;
 	data->av = av;
 	data->err = "";
-}
-
-void	print_msg(char *str)
-{
-	write(2, str, ft_strlen(str));
-	exit(1);
 }
 
 void	fill_list(t_data *data, int ac)

@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 11:15:54 by ababdelo          #+#    #+#              #
-#    Updated: 2023/05/01 12:53:58 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/05/01 15:34:39 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ CC = gcc
 
 RM = rm -f
 
-SRCS = Sort_Utils_1.c Push_Swap.c PS_Utils.c Sort_Utils_2.c Sort_Utils_3.c\
-	Lst_Utils_1.c Lst_Utils_2.c FT_Sort.c FT_Check.c Libft_Utils.c
+SRCS = Act_Utils_1.c Push_Swap.c PS_Utils_1.c PS_Utils_2.c Act_Utils_2.c Act_Utils_3.c\
+	Lst_Utils_1.c Lst_Utils_2.c FT_Sort.c FT_Check.c Libft_Utils.c Sort_Utils.c\
 
 OBJS = $(SRCS:.c=.o)
 
