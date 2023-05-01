@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   FT_Check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:05:10 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/27 13:50:34 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/04/29 09:15:38 by mabdelou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PUSH_SWAP.h"
+
+int	is_sorted(t_data *data)
+{
+	t_node *head;
+
+	head = data->stack_a;
+	while (head != NULL && head->next != NULL)
+	{
+		if (head->value > head->next->value)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
 
 void	check_args(t_data *data)
 {

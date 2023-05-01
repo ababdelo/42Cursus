@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 11:15:54 by ababdelo          #+#    #+#              #
-#    Updated: 2023/04/27 13:06:08 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/04/28 22:08:26 by mabdelou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,9 @@ CC = gcc
 
 RM = rm -f
 
-SRCS = Sort_Utils_1.c Push_Swap.c PS_Utils.c Libft_Utils.c Sort_Utils_2.c Sort_Utils_3.c\
-	Lst_Utils_1.c Lst_Utils_2.c FT_Sort.c FT_Check.c
+SRCS = Sort_Utils_1.c Push_Swap.c PS_Utils.c Sort_Utils_2.c Sort_Utils_3.c\
+	Lst_Utils_1.c Lst_Utils_2.c FT_Sort.c FT_Check.c Libft_Utils_1.c Libft_Utils_2.c\
+	Libft_Utils_3.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PS_Utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:31:17 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/27 13:54:01 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/04/29 09:20:06 by mabdelou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_msg(char *str)
 	exit(1);
 }
 
-void	fill_list(t_data *data)
+void	fill_list(t_data *data, int ac)
 {
 	int	index;
 	t_node	*head;
@@ -34,13 +34,13 @@ void	fill_list(t_data *data)
 	if (!head)
 		print_msg("Error ' Couldn't Allocate 4 head '\n");
 	data->stack_a = head;
-	index = 1;
+	index = ac;
 	head->value = ft_atoi(data, data->av[index]);
 	head->next = NULL;
 	while (data->av[++index] != NULL)
 		lst_add_back(data->stack_a, ft_atoi(data, data->av[index]));
 	if (check_repetition(data))
-		print_msg("Error ' Found Duplicated Number '\n");
+		data->err = "DUP";
 }
 
 void	GetErrorRef(t_data *data)

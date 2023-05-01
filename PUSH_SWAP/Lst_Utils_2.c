@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Lst_Utils_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:28:14 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/27 13:14:35 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/04/28 13:24:15 by mabdelou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,32 @@ void	delete_lst(t_node **lst, t_node *target)
 		}
 		ptr = ptr->next;
 	}
+}
+
+t_node	*Get_bg_lstval(t_node *head)
+{
+	t_node *ref;
+
+	ref = head;
+	while (head != NULL)
+	{
+		if (ref->value < head->value)
+			ref = head;
+		head = head->next;
+	}
+	return (ref);
+}
+
+t_node	*Get_sml_lstval(t_node *head)
+{
+	t_node *ref;
+
+	ref = head;
+	while (head != NULL)
+	{
+		if (ref->value > head->value)
+			ref = head;
+		head = head->next;
+	}
+	return (ref);
 }
