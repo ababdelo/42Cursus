@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Push_Swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:08:21 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/29 10:21:54 by mabdelou         ###   ########.fr       */
+/*   Updated: 2023/05/01 15:05:05 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void print_list(t_node *lst, char c)
 	}
 }
 
-void	do_first(t_data *data, char **argv, int ac)
+void	initialize_prog(t_data *data, char **argv, int ac)
 {
 	initialize_struct(data, argv);
 	check_args(data);
@@ -48,21 +48,16 @@ int	main(int argc, char **argv)
 	int	cntr;
 
 	ac = 1;
-	if (argc == 1 || (argc == 2 && ft_strcmp(argv[1], "") == 0))
-		return (1);
+	if (argc < 3)
+		return (0);
 	else
 	{
-		if (argc == 2)
-		{
-			argv = ft_split(argv[1], ' ');
-			ac = 0;
-		}
-		do_first(&data, argv, ac);
 		cntr = countlst(data.stack_a);
+		initialize_prog(&data, argv, ac);
 		if (is_sorted(&data) == 1)
 			return (0);
 		else
 			which_oper(&data, argc, cntr);
-		print_list(data.stack_a, 'a');
+		//print_list(data.stack_a, 'a');
 	}
 }

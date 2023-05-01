@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PUSH_SWAP.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/29 10:18:53 by mabdelou         ###   ########.fr       */
+/*   Updated: 2023/05/01 12:53:33 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,23 +58,13 @@ int		ft_strcmp(char *str, char *ref);
 void	delete_lst(t_node **lst, t_node *target);
 void	lst_add_front(t_node **lst, int data);
 
-char	**ft_free(char **str, int x);
-char	**ft_split(char const *s, char c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strdup(const char *s1);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-
-char	*ft_strnstr(const char *str, const char *to_f, int len);
-char	*ft_strjoin(char const *s1, char const *s2);
-int		wrd_cnt(char const *s, char del);
-
 void	sort_2nbr(t_data *data);
 void	sort_3nbr(t_data *data, t_node *head);
 void	sort_5nbr(t_data *data);
 void	sort_more(t_data *data);
 int		is_sorted(t_data *data);
 
-void	do_first(t_data *data, char **argv, int ac);
+void	initialize_prog(t_data *data, char **argv, int ac);
 void	which_oper(t_data *data, int ac, int cntr);
 
 void	sa(t_data *data);

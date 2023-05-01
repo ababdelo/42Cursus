@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FT_Check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:05:10 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/29 09:15:38 by mabdelou         ###   ########.fr       */
+/*   Updated: 2023/05/01 11:45:48 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ int	is_sorted(t_data *data)
 
 void	check_args(t_data *data)
 {
-	int	i;
 	int	j;
-
+	int	i;
+	
 	i = 0;
-
 	while (data->av[++i] != NULL)
 	{
 		j = -1;
