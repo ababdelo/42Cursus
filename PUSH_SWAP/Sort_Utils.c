@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:27:35 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/02 22:10:36 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/02 23:23:06 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int	*sort_array(t_data *data, int size)
 	while (++i < size)
 	{
 		array[i] = head->value;
-		printf("array[%d] : %d\n", i, array[i]);
 		head = head->next;
 	}
 	i = -1;
