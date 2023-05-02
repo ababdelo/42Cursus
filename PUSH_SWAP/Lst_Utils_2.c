@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Lst_Utils_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabdelou <mabdelou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:28:14 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/28 13:24:15 by mabdelou         ###   ########.fr       */
+/*   Updated: 2023/05/02 20:54:40 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,3 +62,8 @@ t_node	*Get_sml_lstval(t_node *head)
 	}
 	return (ref);
 }
+
+// int	is_member(t_node *start, t_node *end, t_node *targ)
+// {
+// 	;
+// }

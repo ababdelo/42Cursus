@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:08:21 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/01 15:34:11 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/02 19:59:18 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int	main(int argc, char **argv)
 			return (0);
 		else
 			which_oper(&data, argc, cntr);
-		print_list(data.stack_a, 'a');
+		// printf("Stack A :\n");
+		// print_list(data.stack_a, 'a');
+		// printf("Stack B :\n");
+		// print_list(data.stack_b, 'b');
 	}
 }
