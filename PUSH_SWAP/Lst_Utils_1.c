@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:21:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/04/27 13:13:17 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:59:23 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@ void	lst_add_front(t_node **lst, int data)
 
 int countlst(t_node *lst)
 {
-	t_node *head = lst;
-	int count = 0;
+	
+	t_node	*head;
+	int 	count;
+
+	count = 0;
+	head = lst;
 	while(head != NULL)
 	{
 		head = head->next;
@@ -43,7 +47,9 @@ int countlst(t_node *lst)
 
 t_node *get_lst_targ(t_node *lst, int targ)
 {
-	t_node *head = lst;
+	t_node *head;
+
+	head = lst;
 	int	cntr = countlst(lst);
 	int index = 0;
 	while(index < cntr && head != NULL)

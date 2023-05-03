@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:27:35 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 14:07:56 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:09:42 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,20 @@ int	is_sorted(t_node *head)
 	return (1);
 }
 
-int	is_member(t_node *sr_lst, int start, int end, int targ)
+int	is_member(t_node *sr_lst, t_data *data, int targ)
 {
-	while (start <= end)
+	t_node	*start;
+	t_node	*end;
+	
+	
+	start = get_lst_targ(sr_lst, data->start);
+	end = get_lst_targ(sr_lst, data->end)->next;
+	while (start != end && start != NULL)
 	{
-		if (sr_lst->value == targ)
+		if (targ == sr_lst->value)
 			return (1);
 		sr_lst = sr_lst->next;
+		start = start->next;
 	}
 	return (0);
 }
@@ -61,11 +68,6 @@ void	push_bgval(t_node *head, t_data *data)
 			ra(data);
 	pb(data);
 }
-
-// int	get_lst_position(t_node *head)
-// {
-// 	;
-// }
 
 t_node	*sort_lst(t_data *data)
 {

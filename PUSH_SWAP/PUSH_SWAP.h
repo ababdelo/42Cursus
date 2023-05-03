@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 14:08:07 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:24:39 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+# ifndef MGCNBR
+#  define MGCNBR 4
+# endif
 
 typedef	struct s_node
 {
@@ -53,6 +57,7 @@ t_node *get_lst_targ(t_node *lst, int targ);
 
 t_node	*Get_bg_lstval(t_node *head);
 t_node	*Get_sml_lstval(t_node *head);
+t_node	*get_lst_midpos(t_node *head);
 
 size_t	ft_strlen(const char *str);
 int		ft_atoi(t_data *data, char *str);
@@ -68,7 +73,7 @@ void	sort_3nbr(t_data *data, t_node *head);
 void	sort_5nbr(t_data *data);
 void	sort_largenbr(t_data *data);
 int		is_sorted(t_node *head);
-int	is_member(t_node *sr_lst, int start, int end, int targ);
+int	is_member(t_node *sr_lst, t_data *data, int targ);
 
 void	initialize_prog(t_data *data, char **argv, int ac);
 void	which_oper(t_data *data, int ac, int cntr);

@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:28:14 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 13:50:25 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:02:31 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,16 @@ t_node	*Get_sml_lstval(t_node *head)
 		head = head->next;
 	}
 	return (ref);
+}
+
+t_node	*get_lst_midpos(t_node *head)
+{
+	int	index;
+	int mid;
+	
+	index = -1;
+	mid = countlst(head) / 2;
+	while (++index < mid)
+		head = head->next;
+	return (head);
 }
