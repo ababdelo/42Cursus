@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:58:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 16:36:25 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:07:52 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ void	sort_largenbr(t_data *data)
 	head = data->stack_a;
 	ssize = countlst(head);
 	lst = sort_lst(data);
-	while (++index < ssize)
+	// while (++index < ssize)
+	while (++index < 100)
 	{
 		data->size = countlst(head);
 		data->mid = data->size / 2;
@@ -95,7 +96,6 @@ void	sort_largenbr(t_data *data)
 			pb(data);
 			if (data->stack_b->value < get_lst_midpos(lst)->value)
 				rb(data);
-			//delete_lst(&lst, get_lst_targ(lst, countlst(head) - data->size));
 			head = data->stack_a;
 		}
 		else
@@ -104,6 +104,7 @@ void	sort_largenbr(t_data *data)
 				ra(data);
 			else
 				rra(data);
+			// index--;
 		}
 		head = head->next;
 	}
