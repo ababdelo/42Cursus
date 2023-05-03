@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:33:22 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/02 23:56:43 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 11:20:12 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ void	initialize_struct(t_data *data, char ** av)
 	data->stack_b = NULL;
 	data->av = av;
 	data->err = "";
+	data->size = 0;
+	data->mid = 0;
+	data->offset = 0;
+	data->start = 0;
+	data->end = 0;
 }
 
 void	fill_list(t_data *data, int ac)

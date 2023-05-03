@@ -6,11 +6,33 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:27:35 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/02 23:23:06 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:07:56 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PUSH_SWAP.h"
+
+int	is_sorted(t_node *head)
+{
+	while (head != NULL && head->next != NULL)
+	{
+		if (head->value > head->next->value)
+			return (0);
+		head = head->next;
+	}
+	return (1);
+}
+
+int	is_member(t_node *sr_lst, int start, int end, int targ)
+{
+	while (start <= end)
+	{
+		if (sr_lst->value == targ)
+			return (1);
+		sr_lst = sr_lst->next;
+	}
+	return (0);
+}
 
 void	push_bgval(t_node *head, t_data *data)
 {
@@ -40,37 +62,45 @@ void	push_bgval(t_node *head, t_data *data)
 	pb(data);
 }
 
-int	*sort_array(t_data *data, int size)
-{
-	int		*array;
-	int		i;
-	int		j;
-	int		tmp;
-	t_node	*head;
+// int	get_lst_position(t_node *head)
+// {
+// 	;
+// }
 
-	head = data->stack_a;
-	i = -1;
-	array = malloc(sizeof(int*) * size);
-	if (!array)
-		return 0;
-	while (++i < size)
+t_node	*sort_lst(t_data *data)
+{
+	int		tmp;
+	t_node	*i;
+	t_node	*j;
+	t_node	*lst;
+	
+	lst = malloc(sizeof(t_node));
+	i = data->stack_a;
+	lst->value = i->value;
+	lst->next = NULL; 
+	if (!lst)
+		return NULL;
+	i = data->stack_a->next;
+	while (i != NULL)
 	{
-		array[i] = head->value;
-		head = head->next;
+		lst_add_back(lst,i->value);
+		i = i->next;
 	}
-	i = -1;
-	while (++i < size)
+	i = get_lst_targ(lst, 1);
+	while (i != NULL)
 	{
-		j = i;
-		while (++j < size)
+		j = i->next;
+		while (j != NULL)
 		{
-			if (array[i] > array[j])
+			if (i->value > j->value)
 			{
-				tmp = array[i];
-				array[i] = array[j];
-				array[j] = tmp;
+				tmp = i->value;
+				i->value = j->value;
+				j->value = tmp;
 			}
+			j = j->next;
 		}
+		i = i->next;
 	}
-	return (array);
+	return(lst);
 }

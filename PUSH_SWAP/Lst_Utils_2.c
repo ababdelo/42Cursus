@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:28:14 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 00:07:27 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:50:25 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,21 +61,4 @@ t_node	*Get_sml_lstval(t_node *head)
 		head = head->next;
 	}
 	return (ref);
-}
-
-int	is_member(int *arr,int start, int end, int targ)
-{
-	int	range;
-	int	index;
-
-	index = -1;
-	range = end - start;
-	while (++index < range)
-	{
-		if (targ >= arr[start] && targ <= arr[end])
-		{
-			return (1);
-		}
-	}
-	return (0);
 }

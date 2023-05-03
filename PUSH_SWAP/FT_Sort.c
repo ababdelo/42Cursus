@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:58:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 00:10:24 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:11:20 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,43 +74,37 @@ void	sort_5nbr(t_data *data)
 void	sort_largenbr(t_data *data)
 {
 	t_node	*head;
-	int	*sorted_arr;
-	int	index;
-	int	size;
-	int	offset;
-	int	mid;
-	int	start;
-	int	end;
-
-	index = -1;
-	size = countlst(data->stack_a);
-	// printf("\nBefore sorting\n");
-	sorted_arr = sort_array(data, size);
-	// printf("\nAfter sorting\n");
-	// while (++index < size)
-	// 	printf("array[%d] : %d\n", index, sorted_arr[index]);
+	t_node	*sr_lst;
+	int		lst_size;
 	
+	sr_lst = sort_lst(data);
 	head = data->stack_a;
-	while (head != NULL)
+	while (!is_sorted(head) && head != NULL)
 	{
-		size = countlst(data->stack_a);
-		mid = size / 2 - 1;
-		offset = size / mid + 1;	
-		start = mid - offset;
-		end = mid + offset;
-		if (is_member(sorted_arr,start, end, head->value))
+		data->size = countlst(head);
+		lst_size = countlst(sr_lst);
+		data->mid = data->size / 2 - 1;
+		data->offset = data->size / 4;	
+		data->start = data->mid - data->offset;
+		data->end = data->mid + data->offset;
+		
+		if (is_member(sr_lst, data->start, data->end, head->value))
 		{
 			pb(data);
-			if (head->value < sorted_arr[mid])
+			head = data->stack_a;
+			if (data->stack_b->value < data->mid)
 				rb(data);
 		}
 		else
 		{
-			if (size < size / 2)
+			if (lst_size < data->size / 2)
 				ra(data);
 			else
 				rra(data);
 		}
-		head = head->next;
 	}
+		// printf("Stack A :\n");
+		// print_list(data->stack_a, 'a');
+		// printf("Stack B :\n");
+		// print_list(data->stack_b, 'b');
 }

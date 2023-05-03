@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 00:00:54 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:08:07 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ typedef struct s_data
 	t_node	*stack_b;
 	char	**av;
 	char	*err;
+	int		size;
+	int		offset;
+	int		mid;
+	int		start;
+	int		end;
 }	t_data;
 
 void	initialize_struct(t_data *data, char **av);
@@ -41,13 +46,13 @@ void	check_args(t_data *data);
 void	GetErrorRef(t_data *data);
 void	push_bgval(t_node *head, t_data *data);
 
+t_node	*sort_lst(t_data *data);
+
 t_node *ft_getend(t_node *lst);
 t_node *get_lst_targ(t_node *lst, int targ);
 
 t_node	*Get_bg_lstval(t_node *head);
 t_node	*Get_sml_lstval(t_node *head);
-
-int	*sort_array(t_data *data, int size);
 
 size_t	ft_strlen(const char *str);
 int		ft_atoi(t_data *data, char *str);
@@ -62,8 +67,8 @@ void	sort_2nbr(t_data *data);
 void	sort_3nbr(t_data *data, t_node *head);
 void	sort_5nbr(t_data *data);
 void	sort_largenbr(t_data *data);
-int		is_sorted(t_data *data);
-int	is_member(int *arr,int start, int end, int targ);
+int		is_sorted(t_node *head);
+int	is_member(t_node *sr_lst, int start, int end, int targ);
 
 void	initialize_prog(t_data *data, char **argv, int ac);
 void	which_oper(t_data *data, int ac, int cntr);

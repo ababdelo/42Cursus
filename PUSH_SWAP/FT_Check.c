@@ -6,25 +6,11 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:05:10 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/01 11:45:48 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 13:41:27 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PUSH_SWAP.h"
-
-int	is_sorted(t_data *data)
-{
-	t_node *head;
-
-	head = data->stack_a;
-	while (head != NULL && head->next != NULL)
-	{
-		if (head->value > head->next->value)
-			return (0);
-		head = head->next;
-	}
-	return (1);
-}
 
 void	check_args(t_data *data)
 {

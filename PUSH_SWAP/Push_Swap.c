@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 13:08:21 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/02 19:59:18 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/03 14:00:27 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	{
 		cntr = countlst(data.stack_a);
 		initialize_prog(&data, argv, ac);
-		if (is_sorted(&data) == 1)
+		if (is_sorted(data.stack_a) == 1)
 			return (0);
 		else
 			which_oper(&data, argc, cntr);
