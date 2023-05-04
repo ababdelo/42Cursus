@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:27:35 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 17:04:41 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/04 21:15:24 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,22 @@ int	is_sorted(t_node *head)
 	return (1);
 }
 
-int	is_member(t_node *sr_lst, t_data *data, int targ)
+int	is_member(t_data *data, int targ, int del)
 {
 	t_node	*start;
 	t_node	*end;
 	
+	start = get_lst_targ(data->slst, data->start);
+	end = get_lst_targ(data->slst, data->end);
 	
-	start = get_lst_targ(sr_lst, data->start);
-	end = get_lst_targ(sr_lst, data->end);
 	while (start != end && start != NULL)
 	{
 		if (targ == start->value)
 		{
-			delete_lst(&sr_lst, start);
+			if (del == 1)
+				delete_lst(&data->slst, start);
 			return (1);
 		}
-		// sr_lst = sr_lst->next;
 		start = start->next;
 	}
 	return (0);

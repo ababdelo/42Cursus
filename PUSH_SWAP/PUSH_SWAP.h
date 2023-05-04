@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 15:24:39 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:51:21 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@
 
 typedef	struct s_node
 {
-	int	value;
-	struct s_node *next;
+	int		value;
+	struct	s_node *next;
 }t_node;
 
 typedef struct s_data
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
+	t_node	*slst;
 	char	**av;
 	char	*err;
 	int		size;
@@ -52,19 +53,20 @@ void	push_bgval(t_node *head, t_data *data);
 
 t_node	*sort_lst(t_data *data);
 
-t_node *ft_getend(t_node *lst);
-t_node *get_lst_targ(t_node *lst, int targ);
-
+t_node	*ft_getend(t_node *lst);
+t_node	*get_lst_targ(t_node *lst, int targ);
 t_node	*Get_bg_lstval(t_node *head);
 t_node	*Get_sml_lstval(t_node *head);
 t_node	*get_lst_midpos(t_node *head);
 
 size_t	ft_strlen(const char *str);
+
 int		ft_atoi(t_data *data, char *str);
 int 	countlst(t_node *lst);
+int		count_tilltarget(t_node *head, int	targ);
 int		check_repetition(t_data *data);
 int		ft_strcmp(char *str, char *ref);
-
+int		which_closer(t_data *data, int targ);
 void	delete_lst(t_node **lst, t_node *target);
 void	lst_add_front(t_node **lst, int data);
 
@@ -73,7 +75,7 @@ void	sort_3nbr(t_data *data, t_node *head);
 void	sort_5nbr(t_data *data);
 void	sort_largenbr(t_data *data);
 int		is_sorted(t_node *head);
-int	is_member(t_node *sr_lst, t_data *data, int targ);
+int		is_member(t_data *data, int targ, int del);
 
 void	initialize_prog(t_data *data, char **argv, int ac);
 void	which_oper(t_data *data, int ac, int cntr);

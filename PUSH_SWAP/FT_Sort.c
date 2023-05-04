@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:58:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 17:07:52 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/04 21:32:02 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void	sort_5nbr(t_data *data)
 
 void	sort_largenbr(t_data *data)
 {
-	t_node	*lst;
 	t_node	*head;
 	int		ssize;
 	int		index;
@@ -81,9 +80,8 @@ void	sort_largenbr(t_data *data)
 	index = -1;
 	head = data->stack_a;
 	ssize = countlst(head);
-	lst = sort_lst(data);
-	// while (++index < ssize)
-	while (++index < 100)
+	data->slst = sort_lst(data);
+	while (1)
 	{
 		data->size = countlst(head);
 		data->mid = data->size / 2;
@@ -91,27 +89,27 @@ void	sort_largenbr(t_data *data)
 		data->start = data->mid - data->offset;
 		data->end = data->mid + data->offset;
 		head = data->stack_a;
-		if (is_member(lst, data, head->value))
+		if(data->size == 0)
+			break;
+		if (is_member(data, head->value, 1) || data->size <= 3)
 		{
 			pb(data);
-			if (data->stack_b->value < get_lst_midpos(lst)->value)
+			if (data->stack_b->value < get_lst_midpos(data->stack_b)->value)
 				rb(data);
 			head = data->stack_a;
 		}
 		else
 		{
-			if (ssize / 2 < data->size)
+			if (which_closer(data, head->value))
 				ra(data);
 			else
 				rra(data);
-			// index--;
 		}
-		head = head->next;
 	}
-	// printf("Stack A :\n");
-	// print_list(data->stack_a, 'a');
-	// printf("Stack B :\n");
-	// print_list(data->stack_b, 'b');
+	// print_list(data->stack_a,'a');
+	// print_list(data->stack_b,'b');
+	// print_list(data->slst,'l');
+	// printf("start %d end %d mid %d ",data->start,data->end,data->mid);
 }
 
 // void	sort_largenbr(t_data *data)
@@ -129,7 +127,7 @@ void	sort_largenbr(t_data *data)
 // 		data->mid = data->size / 2 - 1;
 // 		data->offset = data->size / 4;	
 // 		data->start = data->mid - data->offset;
-// 		data->end = data->mid + data->offset;
+// 		data->end = data->mid + data->offset;§
 		
 // 		if (is_member(sr_lst, data->start, data->end, head->value))
 // 		{
