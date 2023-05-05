@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:33:22 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/04 22:17:30 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:36:32 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	initialize_struct(t_data *data, char ** av)
 {
 	data->stack_a = NULL;
 	data->stack_b = NULL;
+	data->slst = NULL;
+	data->head = NULL;
 	data->av = av;
 	data->err = "";
 	data->size = 0;

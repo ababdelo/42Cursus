@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/05 14:35:40 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:35:55 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_data
 	t_node	*stack_a;
 	t_node	*stack_b;
 	t_node	*slst;
+	t_node	*head;
 	char	**av;
 	char	*err;
 	int		size;
@@ -81,6 +82,7 @@ int		is_member(t_data *data, int targ, int del);
 void	initialize_prog(t_data *data, char **argv, int ac);
 void	which_oper(t_data *data, int ac, int cntr);
 void	approach2sort(t_data *data, t_node *head_a);
+void	update_cntrlvar(t_data *data);
 
 void	sa(t_data *data);
 void	sb(t_data *data);
