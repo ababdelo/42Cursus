@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/05 16:48:16 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 22:09:11 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-
-# ifndef MGCNBR
-#  define MGCNBR 4
-# endif
 
 typedef	struct s_node
 {

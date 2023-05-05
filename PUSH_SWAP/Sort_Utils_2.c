@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:41:32 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/05 16:48:44 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 22:15:25 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,33 +54,35 @@ void	complete_sort_task(t_node *i)
 	}
 }
 
-void	which_closer2targ(t_data *data, int targ)
-{
+// int	which_closer2targ(t_data *data, int targ)
+// {
 	
-}
+// }
 
-void	complete_sort_largenbr(t_data *data)
-{
-	t_node	*bglstval;
-	t_node	*head;
+// void	complete_sort_largenbr(t_data *data)
+// {
+// 	t_node	*bglstval;
+// 	t_node	*head;
 
-	head = data->stack_b;
-	data->size = countlst(head);
-	while (1)
-	{
-		if (data->size == 0)
-			break;
-		data->size = countlst(head);
-		bglstval = Get_bg_lstval(data->head);
-		if (head->value == bglstval->value)
-		{
-			pa(data);
-			head = data->stack_a;
-		}
-		else
-		{
-			if (which_closer2targ(data, head->value))
-				rrb(data);
-		}
-	}
-}
+// 	head = data->stack_b;
+// 	data->size = countlst(head);
+// 	while (1)
+// 	{
+// 		if (data->size == 0)
+// 			break;
+// 		data->size = countlst(head);
+// 		bglstval = Get_bg_lstval(data->head);
+// 		if (head->value == bglstval->value)
+// 		{
+// 			pa(data);
+// 			head = data->stack_a;
+// 		}
+// 		else
+// 		{
+// 			if (which_closer2targ(data, head->value))
+// 				rb(data);
+// 			else
+// 				rrb(data);
+// 		}
+// 	}
+// }

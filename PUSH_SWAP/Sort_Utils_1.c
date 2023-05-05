@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:27:35 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/05 16:01:04 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 22:26:21 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,17 @@ void	push_bgval(t_node *head, t_data *data)
 
 void	update_cntrlvar(t_data *data)
 {
+	int	mgcnbr;
+	
+	mgcnbr = 4;
 	data->head = data->stack_a;
 	data->size = countlst(data->head);
+	if (data->size > 100 && data->size < 250)
+		mgcnbr = 8;
+	else if (data->size >= 250)
+		mgcnbr = 16;
 	data->mid = data->size / 2;
-	data->offset = data->size / MGCNBR;
+	data->offset = data->size / mgcnbr;
 	data->start = data->mid - data->offset;
 	data->end = data->mid + data->offset;
 }

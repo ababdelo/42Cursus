@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:58:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/05 16:36:03 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 22:15:47 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	sort_largenbr(t_data *data)
 		}
 		approach2sort(data, data->head);
 	}
-	complete_sort_largenbr(data);
+	// complete_sort_largenbr(data);
 	// printf("Stack a :\n");
 	// print_list(data->stack_a, 'a');
 	// printf("Stack b :\n");
