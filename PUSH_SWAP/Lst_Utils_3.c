@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:27:54 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/04 20:50:29 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:35:37 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	count_tilltarget(t_node *head, int	targ)
 	return (index);
 }
 
-int	which_closer(t_data *data, int targ)
+int	which_closer2range(t_data *data, int targ)
 {
 	int 	size;
 	int		r_closer_pos;
@@ -55,3 +55,18 @@ int	which_closer(t_data *data, int targ)
 		return(1);
 	return(0);
 }
+
+// int	which_closer(t_data *data, t_node *targ)
+// {
+// 	int 	size;
+// 	int		r_closer_pos;
+// 	int		l_closer_pos;
+// 	int		right;
+// 	int		left;
+// 	t_node *head;
+
+// 	size = countlst(data->stack_a);
+// 	r_closer_pos =size;
+// 	l_closer_pos = size;
+// 	head = data->stack_a;
+// }

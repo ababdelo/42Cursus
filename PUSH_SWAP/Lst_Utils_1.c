@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 11:21:58 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/03 15:59:23 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:45:47 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	lst_add_front(t_node **lst, int data)
 
 int countlst(t_node *lst)
 {
-	
 	t_node	*head;
 	int 	count;
 

@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:12:12 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/04 20:51:21 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 14:35:40 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	GetErrorRef(t_data *data);
 void	push_bgval(t_node *head, t_data *data);
 
 t_node	*sort_lst(t_data *data);
+void	complete_sort(t_node *i);
 
 t_node	*ft_getend(t_node *lst);
 t_node	*get_lst_targ(t_node *lst, int targ);
@@ -66,7 +67,7 @@ int 	countlst(t_node *lst);
 int		count_tilltarget(t_node *head, int	targ);
 int		check_repetition(t_data *data);
 int		ft_strcmp(char *str, char *ref);
-int		which_closer(t_data *data, int targ);
+int		which_closer2range(t_data *data, int targ);
 void	delete_lst(t_node **lst, t_node *target);
 void	lst_add_front(t_node **lst, int data);
 
@@ -79,6 +80,7 @@ int		is_member(t_data *data, int targ, int del);
 
 void	initialize_prog(t_data *data, char **argv, int ac);
 void	which_oper(t_data *data, int ac, int cntr);
+void	approach2sort(t_data *data, t_node *head_a);
 
 void	sa(t_data *data);
 void	sb(t_data *data);

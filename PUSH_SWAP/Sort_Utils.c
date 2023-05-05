@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:27:35 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/04 21:15:24 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 14:35:27 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,27 @@ void	push_bgval(t_node *head, t_data *data)
 	pb(data);
 }
 
+void	approach2sort(t_data *data, t_node *head_a)
+{
+	if (is_member(data, head_a->value, 1) || data->size <= 3)
+	{
+		pb(data);
+		if (data->stack_b->value < get_lst_midpos(data->stack_b)->value)
+			rb(data);
+		head_a = data->stack_a;
+	}
+	else
+	{
+		if (which_closer2range(data, head_a->value))
+			ra(data);
+		else
+			rra(data);
+	}
+}
+
 t_node	*sort_lst(t_data *data)
 {
-	int		tmp;
 	t_node	*i;
-	t_node	*j;
 	t_node	*lst;
 	
 	lst = malloc(sizeof(t_node));
@@ -91,7 +107,14 @@ t_node	*sort_lst(t_data *data)
 		lst_add_back(lst,i->value);
 		i = i->next;
 	}
-	i = get_lst_targ(lst, 1);
+	complete_sort(get_lst_targ(lst, 1));
+	return(lst);
+}
+
+void	complete_sort(t_node *i)
+{
+	int		tmp;
+	t_node	*j;
 	while (i != NULL)
 	{
 		j = i->next;
@@ -107,5 +130,4 @@ t_node	*sort_lst(t_data *data)
 		}
 		i = i->next;
 	}
-	return(lst);
 }

@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:58:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/04 21:32:02 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 14:37:17 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,79 +73,31 @@ void	sort_5nbr(t_data *data)
 
 void	sort_largenbr(t_data *data)
 {
-	t_node	*head;
-	int		ssize;
-	int		index;
+	t_node	*head_a;
 
-	index = -1;
-	head = data->stack_a;
-	ssize = countlst(head);
 	data->slst = sort_lst(data);
+	printf("Stack l :\n");
+	print_list(data->slst, 'l');
 	while (1)
 	{
-		data->size = countlst(head);
+		head_a = data->stack_a;
+		data->size = countlst(head_a);
 		data->mid = data->size / 2;
 		data->offset = data->size / MGCNBR;
 		data->start = data->mid - data->offset;
 		data->end = data->mid + data->offset;
-		head = data->stack_a;
 		if(data->size == 0)
+		{
+			while (data->slst != NULL)
+				delete_lst(&data->slst, data->slst);
 			break;
-		if (is_member(data, head->value, 1) || data->size <= 3)
-		{
-			pb(data);
-			if (data->stack_b->value < get_lst_midpos(data->stack_b)->value)
-				rb(data);
-			head = data->stack_a;
 		}
-		else
-		{
-			if (which_closer(data, head->value))
-				ra(data);
-			else
-				rra(data);
-		}
+		approach2sort(data, head_a);
 	}
-	// print_list(data->stack_a,'a');
-	// print_list(data->stack_b,'b');
-	// print_list(data->slst,'l');
-	// printf("start %d end %d mid %d ",data->start,data->end,data->mid);
+	printf("Stack a :\n");
+	print_list(data->stack_a, 'a');
+	printf("Stack b :\n");
+	print_list(data->stack_b, 'b');
+	printf("Stack l :\n");
+	print_list(data->slst, 'l');
 }
-
-// void	sort_largenbr(t_data *data)
-// {
-// 	t_node	*head;
-// 	t_node	*sr_lst;
-// 	int		lst_size;
-	
-// 	sr_lst = sort_lst(data);
-// 	head = data->stack_a;
-// 	while (!is_sorted(head) && head != NULL)
-// 	{
-// 		data->size = countlst(head);
-// 		lst_size = countlst(sr_lst);
-// 		data->mid = data->size / 2 - 1;
-// 		data->offset = data->size / 4;	
-// 		data->start = data->mid - data->offset;
-// 		data->end = data->mid + data->offset;§
-		
-// 		if (is_member(sr_lst, data->start, data->end, head->value))
-// 		{
-// 			pb(data);
-// 			head = data->stack_a;
-// 			if (data->stack_b->value < data->mid)
-// 				rb(data);
-// 		}
-// 		else
-// 		{
-// 			if (lst_size < data->size / 2)
-// 				ra(data);
-// 			else
-// 				rra(data);
-// 		}
-// 	}
-// 		// printf("Stack A :\n");
-// 		// print_list(data->stack_a, 'a');
-// 		// printf("Stack B :\n");
-// 		// print_list(data->stack_b, 'b');
-// }

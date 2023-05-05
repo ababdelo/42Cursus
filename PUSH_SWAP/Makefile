@@ -6,7 +6,7 @@
 #    By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/30 11:15:54 by ababdelo          #+#    #+#              #
-#    Updated: 2023/05/03 18:47:36 by ababdelo         ###   ########.fr        #
+#    Updated: 2023/05/05 14:23:05 by ababdelo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CLN_MSG = --->> ' .o ' files has been removed successfully
 
 FCLN_MSG = --->> executable file ' $(PRGM) ' has been removed successfully
 
-CFLAGS = -Wall -Wextra -Werror ##-fsanitize=address 
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address 
 
 CC = gcc
 
