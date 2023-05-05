@@ -6,7 +6,7 @@
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:58:11 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/05 15:37:34 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 16:36:03 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,20 +81,11 @@ void	sort_largenbr(t_data *data)
 		}
 		approach2sort(data, data->head);
 	}
+	complete_sort_largenbr(data);
 	// printf("Stack a :\n");
 	// print_list(data->stack_a, 'a');
 	// printf("Stack b :\n");
 	// print_list(data->stack_b, 'b');
 	// printf("Stack l :\n");
 	// print_list(data->slst, 'l');
-}
-
-void	update_cntrlvar(t_data *data)
-{
-	data->head = data->stack_a;
-	data->size = countlst(data->head);
-	data->mid = data->size / 2;
-	data->offset = data->size / MGCNBR;
-	data->start = data->mid - data->offset;
-	data->end = data->mid + data->offset;
 }

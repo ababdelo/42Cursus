@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sort_Utils.c                                       :+:      :+:    :+:   */
+/*   Sort_Utils_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ababdelo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 15:27:35 by ababdelo          #+#    #+#             */
-/*   Updated: 2023/05/05 14:35:27 by ababdelo         ###   ########.fr       */
+/*   Updated: 2023/05/05 16:01:04 by ababdelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,16 @@ void	push_bgval(t_node *head, t_data *data)
 	pb(data);
 }
 
+void	update_cntrlvar(t_data *data)
+{
+	data->head = data->stack_a;
+	data->size = countlst(data->head);
+	data->mid = data->size / 2;
+	data->offset = data->size / MGCNBR;
+	data->start = data->mid - data->offset;
+	data->end = data->mid + data->offset;
+}
+
 void	approach2sort(t_data *data, t_node *head_a)
 {
 	if (is_member(data, head_a->value, 1) || data->size <= 3)
@@ -87,47 +97,5 @@ void	approach2sort(t_data *data, t_node *head_a)
 			ra(data);
 		else
 			rra(data);
-	}
-}
-
-t_node	*sort_lst(t_data *data)
-{
-	t_node	*i;
-	t_node	*lst;
-	
-	lst = malloc(sizeof(t_node));
-	i = data->stack_a;
-	lst->value = i->value;
-	lst->next = NULL; 
-	if (!lst)
-		return NULL;
-	i = data->stack_a->next;
-	while (i != NULL)
-	{
-		lst_add_back(lst,i->value);
-		i = i->next;
-	}
-	complete_sort(get_lst_targ(lst, 1));
-	return(lst);
-}
-
-void	complete_sort(t_node *i)
-{
-	int		tmp;
-	t_node	*j;
-	while (i != NULL)
-	{
-		j = i->next;
-		while (j != NULL)
-		{
-			if (i->value > j->value)
-			{
-				tmp = i->value;
-				i->value = j->value;
-				j->value = tmp;
-			}
-			j = j->next;
-		}
-		i = i->next;
 	}
 }
