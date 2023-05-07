@@ -1,4 +1,4 @@
-  <h1 align="center"> 1337 / 42 Cursus </h1>  <h4 align="center"> My Cursus Progress at 1337 / 42 </h4>
+  <p align="center"> 1337 / 42 Cursus </p> <br>  <p align="center"> The projects that I have accomplished in the 1337 Moroccan school (Part of 42Network)</p>
 
 ---
 
