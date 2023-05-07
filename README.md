@@ -29,12 +29,6 @@
     <td>Born2beroot</td>
     <td>System administration</td>
     <td><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cld5ucp2200160gma02j0hbej/project/2910367" alt="ababdelo's 42 Born2beroot Score" /></a></td>
-  </tr>
-  <tr>
-    <td>Push_swap</td>
-    <td>C - Sorting algorithms</td>
-    <td><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cld5ucp2200160gma02j0hbej/project/2991541" alt="ababdelo's 42 pipex Score" /></a></td>
-  </tr>
   <tr>
     <td>So_long</td>
     <td>C - 2D GameDev</td>
@@ -44,6 +38,12 @@
     <td>Pipex </td>
     <td>C - Pipe </td>
     <td><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cld5ucp2200160gma02j0hbej/project/2991541" alt="ababdelo's 42 pipex Score" /></a></td>
+  </tr>
+  </tr>
+  <tr>
+    <td>Push_swap</td>
+    <td>C - Sorting algorithms</td>
+    <td><a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cld5ucp2200160gma02j0hbej/project/3045316" alt="ababdelo's 42 push_swap Score" /></a></td>
   </tr>
 </table>
 
