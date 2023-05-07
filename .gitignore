@@ -1,7 +1,0 @@
-**/.DS_Store
-.vscode
-**/a.out
-/PUSH_SWAP/Temp/*
-/PUSH_SWAP/Output
-/PUSH_SWAP/push_swap
-/PUSH_SWAP/pyviz.py
